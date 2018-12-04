@@ -16,6 +16,7 @@
     * [Template Strings](part1/ecma/template-strings.md)
     * [Arrow Function](part1/ecma/arrow-function.md)
     * [Class](part1/ecma/class.md)
+    * [Promise](part1/ecma/promise.md)
 * [TypeScript Essence](part1/typescript.md)
 
 ## Part Ⅱ. Angular Basic

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": false,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "compileOnSave": true,
+  "buildOnSave": false,
+  "exclude": [
+    "node_modules"
+  ],
+  "filesGlob": [
+    "app/**/*.ts",
+    "typings/index.d.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}
