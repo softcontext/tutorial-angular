@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>I am books.component.html</h2>
+  <p #target>Custom tag has a lot of potential!</p>
+  <button type="button" (click)="target.innerText='Can you feel it?'">Say</button>
+</div>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 mb-2" *ngFor="let b of books">
+      <app-book [book]="b"></app-book>
+    </div>
+  </div>
+</div>
