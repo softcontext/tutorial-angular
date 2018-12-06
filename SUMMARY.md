@@ -18,10 +18,14 @@
     * [Class](part1/ecma/class.md)
     * [Promise](part1/ecma/promise.md)
 * [TypeScript Essence](part1/typescript.md)
+    * [Types](part1/typescript/types.md)
+    * [Interface](part1/typescript/interface.md)
+    * [Class](part1/typescript/class.md)
+    * [Access Modifier](part1/typescript/access-modifier.md)
+    * [Decorator](part1/typescript/decorator.md)
 
 ## Part Ⅱ. Angular Basic
 * [Part Ⅱ. Angular Basic](part2/README.md)
-* [개발환경 설정](part2/configuration.md)
 * [Architecture](part2/architecture.md)
 * [Angular CLI](part2/angular-cli.md)
 * [Routing Ⅰ](part2/routing-1.md)

@@ -61,7 +61,7 @@ console.log(arr3);
 // [ 10, 20, 30, 40, 50 ]
 
 /**
- * Function.prototype.put : 
+ * Function.prototype.push : 
  * 배열의 끝에 요소를 추가한다.
  */
 let index = arr1.push(arr2);

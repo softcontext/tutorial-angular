@@ -2,6 +2,8 @@
 
 <img src="../image/angular-architecture.png" width="100%"/>
 
+## 모듈의 4가지 구성요소
+
 * **Module**	
 화면의 구성요소를 묶어서 처리하는 앵귤러의 모듈시스템의 기본 단위이다. 
 * **Component**	

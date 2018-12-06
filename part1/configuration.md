@@ -29,8 +29,7 @@ IDE 도구로써 Atom 에디터를 사용합니다. Atom은 현대적이고 사�
 
 테마를 검색하고자 할 때는 `Packages` 버튼 대신 `Themes` 버튼을 클릭하세요. `https://atom.io/themes` 사이트를 참고해서 마음에 드는 테마를 추가하세요.
 
-패키지 소개정보를 살펴보고 쓸만한 패키지들을 설치하세요.
-
+패키지 소개정보를 살펴보고 쓸만한 패키지들을 설치하세요.  
 `https://atom.io/packages`
 
 ### 필수 패키지
@@ -88,7 +87,7 @@ A preview of the full source code.
 #### git-plus
 Do git things without the terminal.
 
-또는 이미 설치되어 있는 github 패키지를 이용한다.
+또는 이미 설치되어 있는 github 패키지를 이용한다.  
 `https://flight-manual.atom.io/using-atom/sections/github-package/`
 
 #### hyperclick

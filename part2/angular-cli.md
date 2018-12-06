@@ -46,9 +46,10 @@ typescript                   3.1.6
 
 ## 사용법
 
-필수적인 명령어를 살펴봅니다.
+자주쓰는 필수적인 명령어를 살펴봅니다.
 
-#### ng new [project-name]
+### ng new [project-name]
+
 새 앵귤러 프로젝트를 생성합니다. 다음과 같은 작업이 이루어집니다.
 
 * 개발에 필요한 폴더 및 환경설정 파일들이 생성됩니다.
@@ -63,74 +64,83 @@ typescript                   3.1.6
 
 대답이 끝나면 프로젝트 생성작업을 시작합니다.
 
-* `--minimal=true`
+* `--minimal=true`  
 creates a project without any testing frameworks.
 
-* `--prefix=prefix`
+* `--prefix=prefix`  
 The prefix to apply to generated selectors for the initial project.
 Default: app
 
-* `--skipInstall=true`
+* `--skipInstall=true`  
 When true, does not install dependency packages.
 
-* `--skipTests=true`
+* `--skipTests=true`  
 When true, does not generate "spec.ts" test files for the new project.
 
-#### ng serve -o
+### ng serve -o
+
 프로젝트 루트 폴더에서 명령을 실행하면 앵귤러 프로젝트를 `빌드 및 번들링` 작업을 진행하고 `웹팩 테스트 서버`를 기동합니다. 더불어서 `-o` 옵션을 추가하면 브라우저가 실행되고 웹팩 테스트 서버에 접속하여 `index.html` 파일을 다운받아서 화면에 표시합니다.
 
-#### ng g c [component-name]
+### ng g c [component-name]
+
 새 컴포넌트를 생성합니다. 컴포넌트 전용폴더가 생성됩니다. c 문자는 component 문자열을 줄여쓴 것입니다.
 
 * `--module=app`  
 컴포넌트를 등록할 대상 모듈을 지정합니다.   
-  - `app` 문자열은 `AppModule` 클래스에서 `Module` 단어를 뺀 후 소문자로 사용합니다. 
-  - 생략하면 루트 모듈에 등록됩니다. 
-  - 컴포넌트 생성 시 특정 폴더 밑에 만들라고 한 경우, 해당 폴더에 모듈 파일이 존재한다고 할 때, 생략하면 해당 폴더에 존재하는 모듈에 등록됩니다.
+  - `app` 문자열은 `AppModule` 클래스에서 `Module` 단어를 뺀 후 소문자로 사용합니다.  
+  - 생략하면 루트 모듈에 등록됩니다.   
+  - 컴포넌트 생성 시 특정 폴더 밑에 만들라고 한 경우, 해당 폴더에 모듈 파일이 존재한다고 할 때, 생략하면 해당 폴더에 존재하는 모듈에 등록됩니다.  
 
 * `--selector=selector`  
-컴포넌트의 selector 값을 지정합니다. 생략하면 컴포넌트명에 자동으로 지정됩니다.
+컴포넌트의 selector 값을 지정합니다. 생략하면 컴포넌트명에 자동으로 지정됩니다.  
 
 * `--prefix=my`  
-컴포넌트의 selector 값에서 사용할 두문자를 지정합니다. 생략하면 `angular.json` 파일의 설정을 따릅니다.
+컴포넌트의 selector 값에서 사용할 두문자를 지정합니다. 생략하면 `angular.json` 파일의 설정을 따릅니다.  
 
 * `--inlineTemplate=true`  
-HTML 파일을 별도로 만들지 않습니다. 생략하면 별도로 HTML 파일을 생성합니다.
+HTML 파일을 별도로 만들지 않습니다. 생략하면 별도로 HTML 파일을 생성합니다.  
 
 * `--inlineStyle=true`  
-CSS 파일을 별도로 만들지 않습니다. 생략하면 별도로 CSS 파일을 생성합니다.
+CSS 파일을 별도로 만들지 않습니다. 생략하면 별도로 CSS 파일을 생성합니다.  
 
 * `--spec=false`  
-`테스트 파일(~.spec.ts)`을 별도로 만들지 않습니다. 생략하면 별도로 테스트 파일을 생성합니다.
+`테스트 파일(~.spec.ts)`을 별도로 만들지 않습니다. 생략하면 별도로 테스트 파일을 생성합니다.  
 
 * 보다 자세한 내용은 공식 사이트를 참고하세요.  
 `https://angular.io/cli/generate#component`
 
-#### ng g s [service-name]
+### ng g s [service-name]
+
 새 서비스를 생성합니다.  
 `https://angular.io/cli/generate#directive`
 
-#### ng g g [guard-name]
+### ng g g [guard-name]
+
 새 가드를 생성합니다. 가다는 서비스의 일종으로 라우팅 처리 시 작동하는 서비스입니다.  
 `https://angular.io/cli/generate#guard`
 
-#### ng g p [pipe-name]
+### ng g p [pipe-name]
+
 새 파이프를 생성합니다.  
 `https://angular.io/cli/generate#pipe`
 
-#### ng g d [directive-name]
+### ng g d [directive-name]
+
 새 디렉티브를 생성합니다.  
 `https://angular.io/cli/generate#directive`
 
-#### ng g class [class-name]
+### ng g class [class-name]
+
 새 클래스를 생성합니다.  
 `https://angular.io/cli/generate#class`
 
-#### ng g interface [interface-name]
+### ng g interface [interface-name]
+
 새 인터페이스를 생성합니다.  
 `https://angular.io/cli/generate#interface`
 
-#### ng g m [module-name]
+### ng g m [module-name]
+
 새 모듈을 생성합니다. 모듈 전용폴더가 생성됩니다.  
 
 * `--routing=true`
@@ -139,7 +149,7 @@ CSS 파일을 별도로 만들지 않습니다. 생략하면 별도로 CSS 파�
 * 보다 자세한 내용은 공식 사이트를 참고하세요.  
 `https://angular.io/cli/generate#module`
 
-#### Angular CLI 공식 사이트
+## Angular CLI 공식 사이트
 
 기타 자세한 사용법은 공식 사이트를 참고합니다.  
 
