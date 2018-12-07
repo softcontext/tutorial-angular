@@ -608,7 +608,7 @@ export class Book {
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
-  private books: Array<Book> = [];
+  books: Array<Book> = [];
 
   constructor() { }
 
@@ -759,13 +759,67 @@ Bootstrap 4 카드 디자인을 적용하기 위해서 사용합니다.
 
 ### 배포 테스트를 위한 빌드
 
-일반적으로 개발자 PC에서는 단위테스트를 진행합니다. 개발자들의 개발내역을 모아서 테스트 서버에 올리고 통합테스트를 수행합니다. 추가로 사용자를 분석하여 페르소나를 설립하고 사용자의 행동을 예상하여 진행하는 테스트가 있습니다. 이 테스트를 위한 빌드가 `배포 테스트를 위한 빌드`가 되겠습니다. 테스트 시 실제 브라우저를 이용한다는 점이 단위테스트, 통합테스트와 다른 점이라 하겠습니다. 단위테스트, 통합테스트는 코드적으로 처리하여 자동이지만 사용자에 빙의한 테스트는 수동으로 진행됩니다.
+일반적으로 개발자 PC에서는 단위테스트를 진행합니다. 개발자들의 개발내역을 모아서 테스트 서버에 올리고 통합테스트를 수행합니다. 추가로 사용자를 분석하여 페르소나를 설립하고 사용자의 행동을 예상하여 진행하는 테스트가 있습니다. 이 테스트를 위한 빌드가 `배포 테스트를 위한 빌드`가 되겠습니다. 테스트 시 실제 브라우저를 이용한다는 점이 단위테스트, 통합테스트와 다른 점이라 하겠습니다. 단위테스트, 통합테스트는 코드적으로 처리하여 자동으로 처리하고 사용자에 빙의한 테스트는 수동으로 진행합니다.
 
+다음 명령으로 배포 테스트를 위한 빌드를 수행합니다.
 
+```bash
+$ ng build
+
+Date: 2018-12-07T03:27:52.735Z
+Hash: 8c93d80bd782a0b7c788
+Time: 9858ms
+chunk {main} main.js, main.js.map (main) 14.3 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 223 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 16.3 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.11 MB [initial] [rendered]
+```
+
+* `dist` 폴더가 생성되고 밑으로 프로젝트명 폴더가 생성됩니다.
+* map 파일은 웹 브라우저 테스트 시 발생하는 에러의 위치를 `.ts` 파일의 위치를 연결하기 위한 매핑 목정의 파일입니다.
+* 테스트 시 코드 추적을 위해서 자바스크립트 파일은 압축이 된 상태가 아닙니다. 배포 빌드에서는 압축이 적용되어 사이즈가 크게 줄어듭니다.
+* `index.html` 파일을 파일경로로 브라우저에 열면 패스 문제로 작동하지 않습니다.
+
+#### http-server 사용하기
+
+웹 브라우저에서 테스트하기 위해서는 빌드 결과를 웹 서버가 배포 서비스를 해주어야 합니다. 이를 위해서 간단하게 사용할 수 있는 `http-server` 기술을 소개합니다.
+
+`http-server`를 설치합니다.
+
+```
+$ npm i -g http-server
+$ http-server dist/my-angular1
+Starting up http-server, serving dist/my-angular1
+Available on:
+  http://192.168.0.54:8080
+  http://127.0.0.1:8080
+Hit CTRL-C to stop the server
+```
+
+`http://127.0.0.1:8080` 주소로 브라우저를 사용하여 접속하고 테스트를 진행하세요.
 
 ### 실 서비스를 위한 빌드
 
+```bash
+ng build --prod
 
+Date: 2018-12-07T04:21:35.631Z
+Hash: bd09008c2b3627ecf9b4
+Time: 15784ms
+chunk {0} runtime.ec2944dd8b20ec099bf3.js (runtime) 1.41 kB [entry] [rendered]
+chunk {1} main.07a238c657bdab0ce505.js (main) 179 kB [initial] [rendered]
+chunk {2} polyfills.20ab2d163684112c2aba.js (polyfills) 37.5 kB [initial] [rendered]
+chunk {3} styles.3ff695c00d717f2d2a11.css (styles) 0 bytes [initial] [rendered]
+```
 
+* 배포 빌드 결과로 생긴 파일들의 크기를 살펴봅니다. 앵귤러 프레임워크 코드와 개발자가 작성한 코드는 `main.난수값.js` 파일에 들어 있습니다. 이 파일의 사이즈는 179KB 정도로써 이는 매우 작다고 할 수 있습니다. 
 
+<img src="../image/ng-build.png" width="70%"/>
 
+* 놀라운 점은 파일의 크기가 Angular CLI 버전이 올라갈 수록 점점 작아지고 있다는 사실입니다. 비슷한 코드를 React로 짜고 빌드 했을 때 약 150KB 정도의 크기를 갖습니다. 이제 크기로 앵귤러를 비난하는 Vue.js 옹호자들의 얘기는 크게 와닿지 않게 되었습니다.
+* 앵귤러가 자랑하는 Tree Shaking 처리로 개발자가 실제로 사용하는 라이브러리 기능만이 포함됩니다.
+* 자바스크립트 파일은 압축이 적용되어 파일을 열어보시면 읽을 수 있는 상태라는 것을 알 수 있습니다.
+* 배포 파일을 웹 서버의 정적 리소스 서비스 폴더에 배치해서 브라우저에 요청 시 HTML 파일을 전달합니다. 브라우저가 HTML 파일을 처리하는 도중에 앵귤러의 자바스크립트 코드가 기동하여 서비스가 시작됩니다.
+* 자바스크립트 파일명 중에 사용된 난수값은 파일 이름 충돌을 예방하는 차원의 서비스입니다. 배포 시 index.html 파일명은 변경하여 사용할 수 있습니다.
+* 정상작동 여부는 앞에서 사용해 본 `http-server`를 이용하세요.

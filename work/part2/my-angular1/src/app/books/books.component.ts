@@ -17,7 +17,7 @@ export class Book {
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
-  private books: Array<Book> = [];
+  books: Array<Book> = [];
 
   constructor() { }
 
