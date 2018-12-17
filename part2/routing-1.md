@@ -128,7 +128,7 @@ export class AppRoutingModule { }
 
 지금까지 간단하게 클라이언트 사이드 앵귤러 라우팅 처리방법을 살펴보았습니다. 디자인 개선을 위하여 부트스트랩을 적용해 보도록 하겠습니다.
 
-`index.html` 파일을 수정합니다. 다음 사이트를 참고했습니다.  
+`index.html` 파일을 수정합니다. 추가적인 정보는 다음 사이트를 참고하세요.  
 `https://getbootstrap.com/docs/4.1/getting-started/introduction/`
 
 ```html
@@ -172,39 +172,29 @@ export class AppRoutingModule { }
 </html>
 ```
 
-`app.component.html` 파일을 수정합니다. 다음 사이트를 참고했습니다.  
+`app.component.html` 파일을 수정합니다. 추가적인 정보는 다음 사이트를 참고하세요.  
 `https://getbootstrap.com/docs/4.1/components/navs/#using-dropdowns`
 
 ```html
 <div class="container">
   <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="home">Home</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="about" routerLinkActive="active">About</a>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="about">About</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="etc" routerLinkActive="active">Etc</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
-      role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Active</a>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="etc">Etc</a>
     </li>
     <li class="nav-item">
       <a class="nav-link disabled" href="#">Disabled</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Active</a>
+    </li>
   </ul>
+
   <div class="container">
     <br>
     <router-outlet></router-outlet>
@@ -216,41 +206,38 @@ export class AppRoutingModule { }
 부트스트랩은 선택된 메뉴를 도드라지게 보이게 하기 위한 class 값으로 `active`를 사용합니다. 설명을 위해서 남겨둔 부분이오니 `active` 문자열은 직접 삭제하시기 바랍니다.
 
 * `routerLinkActive="active"`  
-`routerLink` 속성과 더불어서 `routerLinkActive` 속성을 사용하면 해당 메뉴가 선택되었을 때 앵귤러가 동적으로 class 값으로 `active`를 추가합니다. `active` 문자열은 앵귤러 고유 값이 아니라 부트스트랩이 정한 클래스명이니 참고하시기 바랍니다.
-
-> 버그가 하나 존재합니다. `dropdown` 메뉴에 `routerLinkActive`를 설정해도 제대로 작동하지 않습니다. 이를 해결하는 다양한 방법이 `stackoverflow` 사이트에 올라와 있습니다. 하지만 굳이 해결하지 않아도 되겠습니다. 왜냐하면, 실제 개발 시는 UI 라이브러리가 제공하는 컴포넌트를 사용하는 것이 보다 편리하기 때문입니다. 최근에는 앵귤러 머터리얼 디자인도 많이 좋아졌습니다. 앵귤러 학습을 어느정도 마치면 뒤에서 다음 사이트가 제공하는 컴포넌트들을 사용해 보겠습니다.  
-`https://mdbootstrap.com/docs/angular/components/dropdowns/`
+`routerLink` 속성과 더불어서 `routerLinkActive` 속성을 사용하면 해당 메뉴가 선택되었을 때 앵귤러가 동적으로 class 값으로 `active`를 추가합니다. `active` 문자열은 앵귤러 고유 값이 아니라 부트스트랩이 정한 클래스명이니 기억하시기 바랍니다.
 
 ### CDN 방식 대신 내장 방식 사용하기
 
 CDN 방식은 화면을 처리할 때 원격에 있는 CDN 서버에 접속하여 관련 라이브러리를 다운받아서 처리하는 방식입니다. CDN 서버도 정말 가끔 다운되는 것을 경험했기에 미리 관련 라이브러리를 다운받아서 앵귤러 디펜던시로 설정하여 사용하는 방식을 살펴보겠습니다.
 
 ```
-$ npm i jquery@3.3.1
-$ npm i popper.js@1.14.3
-$ npm i bootstrap@4.1.3
+$ npm i jquery popper.js bootstrap
+
++ jquery@3.3.1
++ bootstrap@4.1.3
++ popper.js@1.14.6
 ```
 
 제이쿼리 라이브러리만 설치하면 제이쿼리 함수 사용 시 IDE가 제공하는 도움말 서비스를 받지 못합니다. 타이핑 정의를 추가로 설치하는 것이 좋겠습니다.
 
 ```
-$ npm i --save-dev @types/jquery@3.3.1
+$ npm i --save-dev @types/jquery
 ```
 
 `angular.json` 파일을 수정합니다.
 
 ```json
-...생략
 "styles": [
   "node_modules/bootstrap/dist/css/bootstrap.min.css",
   "src/styles.css"
 ],
 "scripts": [
   "node_modules/jquery/dist/jquery.slim.min.js",
-  "node_modules/popper.js/dist/popper.min.js",
+  "node_modules/popper.js/dist/umd/popper.min.js",
   "node_modules/bootstrap/dist/js/bootstrap.min.js"
 ]
-...생략
 ```
 
 * CSS 파일은 `"styles"` 항목에 설정하고 자바스크립트 파일은 `"scripts"` 항목에 설정합니다. 이제 `index.html` 파일에서 임포트 관련 코드를 생략할 수 있습니다.
@@ -289,7 +276,6 @@ $ npm i --save-dev @types/jquery@3.3.1
 `styles.css` 파일을 수정합니다.
 
 ```css
-/* You can add global styles to this file, and also import other style files */
 body {
   margin-top: 20px !important;
   margin-bottom: 20px !important;
@@ -349,7 +335,3 @@ export class HomeComponent implements OnInit {
 모든 태그들은 기본적으로 `position: static` 상태입니다. 태그의 위치를 살짝 변경하고 싶을 때 `position: relative`를 사용합니다. 이제 `top, right, bottom, left` 속성을 사용하여 위치 조절이 가능합니다.
 
 화면에서 `Start Animation` 버튼을 클릭하면 오른쪽으로 살짝 움직이는지 확인하세요. 
-
-다음 사이트를 참고했습니다.  
-* `https://medium.com/@swarnakishore/how-to-include-and-use-jquery-in-angular-cli-project-592e0fe63176`  
-* `https://hackernoon.com/how-to-use-javascript-libraries-in-angular-2-apps-ff274ba601af`  

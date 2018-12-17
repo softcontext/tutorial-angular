@@ -1,0 +1,44 @@
+.header {
+  position: relative;
+  background-image: url("/assets/images/headerback.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(244, 244, 244, 0.5);
+}
+
+.description {
+  position: absolute;
+  top: 30%;
+  margin: auto;
+  padding: 2em;
+}
+
+.description h1 {
+  color: #F97300;
+}
+
+.description p {
+  color: #666;
+  font-size: 20px;
+  width: 50%;
+  line-height: 1.5;
+}
+
+.description button {
+  border: 1px solid #F97300;
+  background: #F97300;
+  color: #fff;
+}
+
+.description button:hover {
+  background: #fff;
+  color: #F97300;
+}

@@ -1,0 +1,39 @@
+<div class="container">
+  <p>정적으로 클래스 설정</p>
+  <div class="row">
+    <button [ngClass]="strClassName">ngClass = 변수값</button>
+    <button [ngClass]="'active'">ngClass = 문자열</button>
+    <button bind-ngClass="strClassName">bind-ngClass = 변수값</button>
+  </div>
+  <div class="row">
+    <button [attr.class]="strClassName">attr.class = 변수값</button>
+    <button [attr.class]="'active'">attr.class = 문자열</button>
+    <button [class.active]="true">class.active = 불린값</button>
+  </div>
+
+  <p>동적으로 클래스 제어</p>
+  <div class="row">
+    <button class="btn" [ngClass]="{active: isActive}" (click)="isActive=!isActive;">
+      {{isActive ? 'ON' : 'OFF'}}
+    </button>
+    <button class="btn" [class.active]="isActive" (click)="isActive=!isActive;">
+      {{isActive ? 'ON' : 'OFF'}}
+    </button>
+  </div>
+  <div class="row">
+    <button class="btn" [ngClass]="isActive ? strClassRed : strClassBlue" (click)="isActive=!isActive;">
+      {{isActive ? 'ON' : 'OFF'}}
+    </button>
+    <button class="btn" [ngClass]="isActive ? 'red' : 'blue'" (click)="isActive=!isActive;">
+      {{isActive ? 'ON' : 'OFF'}}
+    </button>
+  </div>
+
+  <p>동적으로 버튼 제어</p>
+  <div class="row">
+    <button class="btn" [ngClass]="methods[0].klass" (click)="changeMethod()">
+      {{methods[0].text}}
+    </button>
+  </div>
+  <small>{{methods[0].message}}</small>
+</div>

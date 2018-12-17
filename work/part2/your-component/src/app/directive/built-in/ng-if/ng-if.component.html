@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-sm-4">
+      <p>Gender Selected: {{genderSelected}}</p>
+    </div>
+    <div class="col-sm-4 mr-auto">
+      <select [(ngModel)]="genderSelected">
+        <option *ngFor="let g of gender" value="{{g.code}}">{{g.text}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <p>If ~ Else 처리방법</p>
+    </div>
+    <div class="col-sm-4 mr-auto">
+      <p *ngIf="genderSelected == 1">Male selected</p>
+      <p *ngIf="genderSelected == 2">Female selected</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <p>처리 후 사라지는 ng-template 사용</p>
+    </div>
+    <div class="col-sm-4 mr-auto">
+      <p>
+        <ng-template [ngIf]="genderSelected == 1">Male selected</ng-template>
+        <ng-template [ngIf]="genderSelected == 2">Female selected</ng-template>
+      </p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-sm-4 h-100">
+      <p>{{getCheckedMethods}}&nbsp;</p>
+    </div>
+    <div class="col-sm-8">
+      <div class="form-check form-check-inline" *ngFor="let m of methods">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="m.checked"
+          id="{{m.code}}" name="methods">
+        <label class="form-check-label" for="{{m.code}}">{{m.text}}</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <pre>{{methods | json}}</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <button class="btn btn-primary" type="button" [disabled]="!isMethodChecked">Send</button>
+    <button class="btn btn-primary" type="button" *ngIf="isMethodChecked">Submit</button>
+  </div>
+</div>

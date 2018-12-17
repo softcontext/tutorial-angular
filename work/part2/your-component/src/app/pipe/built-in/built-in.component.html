@@ -1,0 +1,77 @@
+<div class="container">
+  <p>문자열</p>
+  str: <label>{{str}}</label><br>
+  str | uppercase: <label>{{str | uppercase}}</label><br>
+  str | lowercase: <label>{{str | lowercase}}</label><br>
+</div>
+<div class="container">
+  <p>슬라이스</p>
+  str: <label>{{str}}</label><br>
+  str | slice:0:3: <label>{{str | slice:0:3}}</label><br>
+  str | slice:3:5: <label>{{str | slice:3:5}}</label><br>
+</div>
+<div class="container">
+  <p>숫자</p>
+  num: <label>{{num}}</label><br>
+  num | number: <label>{{num | number}}</label><br>
+  num | number:'.4-4': <label>{{num | number:'.4-4'}}</label><br>
+  num | number:'.5-5': <label>{{num | number:'.5-5'}}</label><br>
+  num | number:'8.0-3': <label>{{num | number:'8.0-3'}}</label><br>
+</div>
+<div class="container">
+  <p>퍼센트</p>
+  num: <label>{{num}}</label><br>
+  num | percent: <label>{{num | percent}}</label><br>
+  num / 100 | percent:'8.0-5': <label>{{num / 100 | percent:'8.0-5'}}</label><br>
+</div>
+<div class="container">
+  <p>날짜</p>
+  date: <label>{{date}}</label><br>
+  date | date: <label>{{date | date}}</label><br>
+  date | date:'HH:mm': <label>{{date | date:'HH:mm'}}</label><br>
+  date | date:'fullDate': <label>{{date | date:'fullDate'}}</label><br>
+  date | date:'yyyy.MM.dd HH:mm:ss': <label>{{date | date:'yyyy.MM.dd HH:mm:ss'}}</label><br>
+  date | date:'yyyy.MM.dd aa hh:mm:ss': <label>{{date | date:'yyyy.MM.dd aa hh:mm:ss'}}</label><br>
+</div>
+<div class="container">
+  <p>통화</p>
+  a: <label>{{a}}</label><br>
+  b: <label>{{b}}</label><br>
+
+  a | currency: <label>{{a | currency}}</label><br>
+  a | currency:'CAD': <label>{{a | currency:'CAD'}}</label><br>
+  a | currency:'CAD':'code': <label>{{a | currency:'CAD':'code'}}</label><br>
+  b | currency:'CAD':'symbol':'4.2-2': <label>{{b | currency:'CAD':'symbol':'4.2-2'}}</label><br>
+  b | currency:'CAD':'symbol-narrow':'4.2-2': <label>{{b | currency:'CAD':'symbol-narrow':'4.2-2'}}</label><br>
+
+  a | currency:'KRW': <label>{{a | currency:'KRW'}}</label><br>
+  a | currency:'KRW':'code': <label>{{a | currency:'KRW':'code'}}</label><br>
+  b | currency:'KRW':'symbol':'4.2-2': <label>{{b | currency:'KRW':'symbol':'4.2-2'}}</label><br>
+  b | currency:'KRW':'symbol-narrow':'4.2-2': <label>{{b | currency:'KRW':'symbol-narrow':'4.2-2'}}</label><br>
+  b | currency:'KRW':'symbol':'5.1': <label>{{b | currency:'KRW':'symbol':'5.1'}}</label><br>
+</div>
+<div class="container">
+  <p>JSON</p>
+  json: <label>{{json}}</label><br>
+  json: <label>{{json | json}}</label><br>
+</div>
+<div class="container">
+  <p>반복 슬라이스</p>
+  <ul>
+    <li *ngFor="let item of items">
+      {{ item }}
+    </li>
+  </ul>
+  <br>
+  <ol>
+    <li *ngFor="let item of items | slice:1:3">
+      {{ item }}
+    </li>
+  </ol>
+</div>
+<div class="container" id="custom">
+  <p>커스텀 파이프</p>
+  dateAsString: <label>{{dateAsString}}</label><br>
+  dateAsString: <label>{{dateAsString | strDate}}</label><br>
+  dateAsString: <label>{{dateAsString | strDate:'-'}}</label><br>
+</div>

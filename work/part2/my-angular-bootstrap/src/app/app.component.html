@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+  <a class="navbar-brand" routerLink="/">Angular Logo</a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" 
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+    ria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/home">
+          Home <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" routerLinkActive="active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+          role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Actions
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="'/accounts'"> Accounts </a>
+          <a class="dropdown-item" [routerLink]="'/create-account'"> Create Account </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="'/contact-list'" 
+            routerLinkActive="active"> Contacts </a>
+          <a class="dropdown-item" [routerLink]="'/create-contact'"> Create Contact </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="'/leads'"> Leads </a>
+          <a class="dropdown-item" [routerLink]="'/create-lead'"> Create Lead </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="'/opportunities'"> Opportunities </a>
+          <a class="dropdown-item" [routerLink]="'/create-opportunity'"> Create Opportunity </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+</nav>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

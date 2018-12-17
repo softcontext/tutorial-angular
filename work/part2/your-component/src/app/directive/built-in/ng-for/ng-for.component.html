@@ -1,0 +1,12 @@
+<div class="container">
+  <p *ngFor="let building of tallestBuildings; let i=index">
+    {{i+1}}: {{building.title}}, {{building.height | number}}
+  </p>
+  <hr>
+  <p>
+    <ng-template ngFor let-building let-i="index" [ngForOf]="tallestBuildings">
+      {{i+1}}: {{building.title}}, {{building.height | number}}
+      <br>
+    </ng-template>
+  </p>
+</div>

@@ -1,0 +1,84 @@
+<div id="wrapper">
+
+  <div id="sidebar-wrapper">
+    
+    <div class="profile-sidebar">
+      <div class="profile-userpic">
+        <img src="https://avatars0.githubusercontent.com/u/18523869?s=460&v=4" 
+          class="mx-auto d-block img-fluid" alt="user picture">
+      </div>
+      <div class="profile-usertitle">
+        <div class="profile-usertitle-name">
+          Marcus Doe
+        </div>
+        <div class="profile-usertitle-job">
+          Developer
+        </div>
+      </div>
+      <div class="profile-userbuttons">
+        <button type="button" class="btn btn-success btn-sm">Follow</button>
+        <button type="button" class="btn btn-danger btn-sm">Message</button>
+      </div>
+    </div>
+    
+    <ul class="sidebar-nav">
+      <li>
+        <a routerLink="home" routerLinkActive="active">
+          <i class="fa fa-home fa-fw" aria-hidden="true"></i>Home</a>
+      </li>
+      <li>
+        <a routerLink="about" routerLinkActive="active">
+          <i class="fa fa-book fa-fw" aria-hidden="true"></i>About</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>Dashboard</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-camera-retro fa-fw" aria-hidden="true"></i>Shortcuts</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-clipboard fa-fw" aria-hidden="true"></i>Overview</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-paper-plane fa-fw" aria-hidden="true"></i>Events</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-paperclip fa-fw" aria-hidden="true"></i>About</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-trash fa-fw" aria-hidden="true"></i>Services</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-cog fa-fw" aria-hidden="true"></i>Contact</a>
+      </li>
+    </ul>
+  </div>
+
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+
+      <button class="hamburger hamburger--arrow side-menu-toggle" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+
+      <button class="hamburger hamburger--arrow-r is-active side-menu-toggle" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+
+      <ng-content></ng-content>
+
+    </div>
+  </div>
+
+</div>

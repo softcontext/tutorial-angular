@@ -1,0 +1,35 @@
+.contact-form {
+  margin: 6em 0;
+  position: relative;
+}
+
+.contact-form h1 {
+  padding: 2em 1px;
+  color: #F97300;
+}
+
+.contact-form .right {
+  max-width: 600px;
+}
+
+.contact-form .right .btn-secondary {
+  background: #F97300;
+  color: #fff;
+  border: 0;
+}
+
+.contact-form .right .form-control::placeholder {
+  color: #888;
+  font-size: 16px;
+}
+
+.contact-form button:hover {
+  background: #fff;
+  color: #F97300;
+}
+
+.contact-form button {
+  border: 1px solid #F97300;
+  background: #F97300;
+  color: #fff;
+}

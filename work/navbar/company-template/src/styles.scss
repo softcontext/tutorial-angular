@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+h1 {
+  font-family: "Raleway";
+}
+
+h2, h3, h4, h5, h6, html {
+  font-family: "Roboto", "Raleway", "Exo+2";
+}
+
+a {
+  font-family: "Exo+2";
+}

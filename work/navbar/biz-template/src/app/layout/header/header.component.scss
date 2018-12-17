@@ -1,0 +1,45 @@
+.top-nav {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  height: 80px;
+}
+
+.top-nav .navbar-nav li .nav-link {
+  color: #fff;
+  font-size: 14px;
+  padding: 29px 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.top-nav .nav-item.active a.nav-link,
+.top-nav li a.nav-link:hover {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+}
+
+.top-nav .navbar-brand {
+  font-size: 28px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.top-nav.light-header {
+  height: 60px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.top-nav.light-header .navbar-brand {
+  color: #212121;
+}
+
+.top-nav.light-header .navbar-nav li .nav-link {
+  color: #212121;
+  padding: 19px 15px;
+}
+
+.top-nav.light-header .nav-item.active a.nav-link,
+.top-nav.light-header li a.nav-link:hover {
+  border-bottom: 3px solid gray;
+  color: black;
+}

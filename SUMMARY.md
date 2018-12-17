@@ -30,9 +30,10 @@
 * [Angular CLI](part2/angular-cli.md)
 * [Routing Ⅰ](part2/routing-1.md)
 * [Component](part2/component.md)
+* [Binding](part2/binding.md)
+* [Directive](part2/directive.md)
 * [Service](part2/service.md)
 * [Pipe](part2/pipe.md)
-* [Directive](part2/directive.md)
 * [Module](part2/module.md)
 
 ## Part Ⅲ. Angular Intermediate
@@ -53,4 +54,9 @@
 * [Angular UI Library](part4/ui-library.md)
 
 ## Appendix
+* [Angular with Bootstrap](appendix/angular-bootstrap.md)
+* [Angular Material](appendix/angular-material.md)
+* [ng-bootstrap](appendix/ng-bootstrap.md)
+* [primeng](appendix/primeng.md)
+* [Sort Pipe](appendix/sort-pipe.md)
 

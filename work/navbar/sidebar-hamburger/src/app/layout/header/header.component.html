@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+
+  <button class="hamburger hamburger--arrow side-menu-toggle" type="button">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
+
+  <a href="#menu-toggle" class="navbar-brand" routerLink="home" routerLinkActive="active">Angular Wave</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="home" routerLinkActive="active">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="about" routerLinkActive="active">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Services</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Actions
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="'/accounts'"> Accounts </a>
+          <a class="dropdown-item" [routerLink]="'/create-account'"> Create Account </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="'/contacts'"> Contacts </a>
+          <a class="dropdown-item" [routerLink]="'/create-contact'"> Create Contact </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="'/leads'"> Leads </a>
+          <a class="dropdown-item" [routerLink]="'/create-lead'"> Create Lead </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="'/opportunities'"> Opportunities </a>
+          <a class="dropdown-item" [routerLink]="'/create-opportunity'"> Create Opportunity </a>
+        </div>
+      </li>
+
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Actions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="'/accounts'"> Accounts </a>
+          <a class="dropdown-item" [routerLink]="'/create-account'"> Create Account </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="'/contacts'"> Contacts </a>
+          <a class="dropdown-item" [routerLink]="'/create-contact'"> Create Contact </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="'/leads'"> Leads </a>
+          <a class="dropdown-item" [routerLink]="'/create-lead'"> Create Lead </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="'/opportunities'"> Opportunities </a>
+          <a class="dropdown-item" [routerLink]="'/create-opportunity'"> Create Opportunity </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user-circle" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="#">Settings</a>
+          <a class="dropdown-item" href="#">Activity Log</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+</nav>

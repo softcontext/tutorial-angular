@@ -1,32 +1,22 @@
 <div class="container">
   <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="home">Home</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="about" routerLinkActive="active">About</a>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="about">About</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="etc" routerLinkActive="active">Etc</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-      aria-haspopup="true" aria-expanded="false" menuDropdown>Dropdown</a>
-      <div class="dropdown-menu">
-        <!-- <a class="dropdown-item" routerLink="home" routerLinkActive="active">Home</a> -->
-        <a class="dropdown-item" routerLink="about" routerLinkActive="active">About</a>
-        <a class="dropdown-item" routerLink="etc" routerLinkActive="active">Etc</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Active</a>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="etc">Etc</a>
     </li>
     <li class="nav-item">
       <a class="nav-link disabled" href="#">Disabled</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Active</a>
+    </li>
   </ul>
+
   <div class="container">
     <br>
     <router-outlet></router-outlet>

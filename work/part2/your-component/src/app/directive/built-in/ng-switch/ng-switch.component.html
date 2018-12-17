@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <h2>Group: {{group ? group : '?'}}</h2>
+  </div>
+
+  <div class="row">
+    <button class="btn btn-primary" type="button" (click)="group='A'">Group A</button>
+    <button class="btn btn-success" type="button" (click)="group='B'">Group B</button>
+    <button class="btn btn-warning" type="button" (click)="group='C'">Group C</button>
+    <button class="btn btn-danger" type="button" (click)="group='D'">Group D</button>
+  </div>
+
+  <div class="row">
+    <p *ngIf="group==undefined">Select a group.</p>
+    <p *ngIf="group!=undefined">Group {{group}} selected.</p>
+  </div>
+
+  <div class="row">
+    <div ngSwitch="{{group}}">
+      <p *ngSwitchCase="undefined">Select a group.</p>
+      <p *ngSwitchCase="'A'">Group A: 100%</p>
+      <p *ngSwitchCase="'B'">Group B: 80%</p>
+      <p *ngSwitchCase="'C'">Group C: 60%</p>
+      <p *ngSwitchDefault>Group D: 40%</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <button class="btn btn-dark" [ngSwitch]="group">
+      <ng-template [ngSwitchCase]="undefined">Select a group.</ng-template>
+      <ng-template ngSwitchCase="A">Group A: 100%</ng-template>
+      <ng-template [ngSwitchCase]="'B'">Group B: 80%</ng-template>
+      <ng-template ngSwitchCase="C">Group C: 60%</ng-template>
+      <ng-template ngSwitchDefault>Group D: 40%</ng-template>
+    </button>
+  </div>
+</div>

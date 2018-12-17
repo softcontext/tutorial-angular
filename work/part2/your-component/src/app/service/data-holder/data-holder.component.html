@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="alert alert-primary" role="alert" *ngIf="message">
+    {{message}}
+  </div>
+
+  <div class="row">
+    <div class="col-auto">
+      <h2>{{data}}</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-auto">
+      <input class="form-control" type="text" [(ngModel)]="data">
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary" type="button" (click)="save()">Save</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-auto">
+      <p>{{this.dataHolderService | json}}</p>
+    </div>
+  </div>
+</div>

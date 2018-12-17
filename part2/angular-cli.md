@@ -2,21 +2,19 @@
 
 Angular CLI는 Angular 응용 프로그램을 초기화, 개발, 스캐 폴딩 및 유지 관리하는 데 사용하는 명령 줄 인터페이스 도구입니다. 도구를 콘솔에서 직접 사용하거나 Angular 콘솔과 같은 대화 형 UI를 통해 간접적으로 사용할 수 있습니다.
 
-> Angular CLI를 위한 전용 도구가 나왔습니다. Angular 콘솔이라고 부릅니다.
-`https://angularconsole.com/`
-하지만 수업은 기존 콘솔에서 진행하도록 하겠습니다.
+`Angular CLI를 위한 전용 도구가 나왔습니다. Angular 콘솔이라고 부릅니다. 수업은 기존 콘솔에서 진행하도록 하겠습니다. https://angularconsole.com/`
 
 ## 설치
 
 노드의 NPM 도구를 사용하여 Angular CLI를 설치합니다.
 
-```console
+```bash
 $ npm install -g @angular/cli
 ```
 
 버전을 확인합니다.
 
-```console
+```bash
 $ ng --version
 
      _                      _                 ____ _     ___
@@ -57,25 +55,144 @@ typescript                   3.1.6
 * package.json 파일에 디펜던시 내역에 따라서 라이브러리가 다운로드 됩니다.
 
 프로젝트 생성 시 라우팅 모듈을 추가로 만들것인지 물어봅니다.  
-`Would you like to add Angular routing?`
+`Would you like to add Angular routing? yes`
 
 프로젝트 생성 시 CSS 기술로 무엇을 사용할 것인지 추가로 물어봅니다.  
-`Which stylesheet format would you like to use?`
+`Which stylesheet format would you like to use? scss`
 
 대답이 끝나면 프로젝트 생성작업을 시작합니다.
 
 * `--minimal=true`  
-creates a project without any testing frameworks.
+creates a project without any testing frameworks.  
+테스트와 관련한 jasmine, karma, protractor 등의 디펜던시를 제외합니다. 기동 컴포넌트인 AppComponent가 인라인템플릿, 인라인스타일 방식으로 생성됩니다. 새 컴포넌트를 생성하면 spec.ts 파일은 생성됩니다.   
+`Default: false`  
 
-* `--prefix=prefix`  
-The prefix to apply to generated selectors for the initial project.
-Default: app
+**package.json**
 
-* `--skipInstall=true`  
-When true, does not install dependency packages.
+```json
+"dependencies": {
+  "@angular/animations": "~7.1.0",
+  "@angular/common": "~7.1.0",
+  "@angular/compiler": "~7.1.0",
+  "@angular/core": "~7.1.0",
+  "@angular/forms": "~7.1.0",
+  "@angular/platform-browser": "~7.1.0",
+  "@angular/platform-browser-dynamic": "~7.1.0",
+  "@angular/router": "~7.1.0",
+  "core-js": "^2.5.4",
+  "rxjs": "~6.3.3",
+  "tslib": "^1.9.0",
+  "zone.js": "~0.8.26"
+},
+"devDependencies": {
+  "@angular-devkit/build-angular": "~0.11.0",
+  "@angular/cli": "~7.1.1",
+  "@angular/compiler-cli": "~7.1.0",
+  "@angular/language-service": "~7.1.0",
+  "@types/node": "~8.9.4",
+  "ts-node": "~7.0.0",
+  "tslint": "~5.11.0",
+  "typescript": "~3.1.6"
+}
+```
 
 * `--skipTests=true`  
-When true, does not generate "spec.ts" test files for the new project.
+When true, does not generate "spec.ts" test files for the new project.  
+테스트와 관련한 jasmine, karma, protractor 등의 설정은 포함되나 angular.json 파일에 설정을 추가하여 spec.ts 파일의 생성을 막습니다. 관련하여 angular.json 파일에 설정되는 내용은 다음과 같습니다.  
+`Default: false`  
+
+**angular.json**
+
+```json
+"schematics": {
+  "@schematics/angular:component": {
+    "styleext": "scss",
+    "spec": false
+  },
+  "@schematics/angular:class": {
+    "spec": false
+  },
+  "@schematics/angular:directive": {
+    "spec": false
+  },
+  "@schematics/angular:guard": {
+    "spec": false
+  },
+  "@schematics/angular:module": {
+    "spec": false
+  },
+  "@schematics/angular:pipe": {
+    "spec": false
+  },
+  "@schematics/angular:service": {
+    "spec": false
+  }
+},
+```
+
+* `--prefix=prefix`  
+The prefix to apply to generated selectors for the initial project.  
+컴포넌트의 selector 값에 자동으로 붙는 두문자를 변경합니다. 관련 설정은 angular.json 파일의 `"prefix": "app"` 항목에서 찾아 볼 수 있습니다.  
+`Default: app`   
+
+* `--skipInstall=true`  
+When true, does not install dependency packages.  
+프로젝트 스캐폴딩 작업 후 package.json 파일의 dependencies, devDependencies 설정에 따른 디펜던시 설치작업을 수행하지 않습니다. 나중에 직접 `npm install` 명령으로 설치할 수 있습니다. 무엇을 install 할 지 명시하지 않으면 자동으로 package.json 파일에 설정된 디펜던시들을 모두 설치합니다.   
+`Default: false`  
+
+* `--inlineTemplate=true`  
+컴포넌트의 HTML 파일을 별도로 만들지 않고 class 파일에서 작업할 수 있도록 조치합니다.   
+`Default: false`  
+
+* `--inlineStyle=true`  
+컴포넌트의 CSS 파일을 별도로 만들지 않고 class 파일에서 작업할 수 있도록 조치합니다. 관련하여 설정된 내용은 `angular.json` 파일에서 찾을 수 있습니다.   
+`Default: false`  
+
+**angular.json**
+
+```json
+"schematics": {
+  "@schematics/angular:component": {
+    "inlineTemplate": true,
+    "inlineStyle": true,
+    "styleext": "scss"
+  }
+},
+```
+
+**app.component.ts**
+
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <!--The content below is only a placeholder and can be replaced.-->
+    <div style="text-align:center">
+      <h1>
+        Welcome to {{title}}!
+      </h1>
+      <!-- 생략 -->
+    <router-outlet></router-outlet>
+  `,
+  styles: []
+})
+export class AppComponent {
+  title = 'small-project';
+}
+```
+
+* `--skipGit=true`  
+When true, does not initialize a git repository.  
+`기본 값이 false라고 공식 사이트에 나와 있으나 옵션을 사용하지 않아도 깃 저장소는 생성되지 않습니다. 기본 값은 true라고 보는 것이 옳겠습니다.`   
+하나의 워크 스페이스 폴더에 여러 앵귤러 프로젝트를 작업할 때는 개별 적으로 깃 저장소를 만들기 보다는 워크 스페이스 단위로 만드는 것을 선호할 수 있기 때문에 필요한 옵션이라 할 수 있습니다.
+
+### 최소 사이즈 프로젝트 만들기
+
+이것 저것 뺀 프로젝트를 다음 명령으로 만들어 봅시다. 프로젝트의 구성과 `package.json` 파일과 `angular.json` 파일의 설정부분을 살펴보세요.
+
+`$ ng new small-project --inlineTemplate=true --inlineStyle=true --minimal=true --skipTests=true --skipGit=true --skipInstall=true`
 
 ### ng serve -o
 
@@ -83,7 +200,7 @@ When true, does not generate "spec.ts" test files for the new project.
 
 ### ng g c [component-name]
 
-새 컴포넌트를 생성합니다. 컴포넌트 전용폴더가 생성됩니다. c 문자는 component 문자열을 줄여쓴 것입니다.
+새 컴포넌트를 생성합니다. 컴포넌트 전용폴더가 생성됩니다. g 문자는 generate 문자열을 줄여서 쓴 것이고 c 문자는 component 문자열을 줄여서 쓴 것입니다.  
 
 * `--module=app`  
 컴포넌트를 등록할 대상 모듈을 지정합니다.   
@@ -111,63 +228,65 @@ CSS 파일을 별도로 만들지 않습니다. 생략하면 별도로 CSS 파�
 
 ### ng g s [service-name]
 
-새 서비스를 생성합니다.  
+새 서비스를 생성합니다. s 문자는 service 문자열을 줄여서 쓴 것입니다.  
 `https://angular.io/cli/generate#directive`
 
 ### ng g g [guard-name]
 
-새 가드를 생성합니다. 가다는 서비스의 일종으로 라우팅 처리 시 작동하는 서비스입니다.  
+새 가드를 생성합니다. 가다는 서비스의 일종으로 라우팅 처리 시 작동하는 서비스입니다. 두 번째 g 문자는 guard 문자열을 줄여서 쓴 것입니다.  
 `https://angular.io/cli/generate#guard`
 
 ### ng g p [pipe-name]
 
-새 파이프를 생성합니다.  
+새 파이프를 생성합니다. p 문자는 pipe 문자열을 줄여서 쓴 것입니다.  
 `https://angular.io/cli/generate#pipe`
 
 ### ng g d [directive-name]
 
-새 디렉티브를 생성합니다.  
+새 디렉티브를 생성합니다. d 문자는 directive 문자열을 줄여서 쓴 것입니다.  
 `https://angular.io/cli/generate#directive`
 
 ### ng g class [class-name]
 
-새 클래스를 생성합니다.  
+새 클래스를 생성합니다. c 문자는 component 문자열을 의미하기 때문에 사용할 수 없습니다. 이럴 때는 줄여 쓰지 말고 그대로 class 라는 문자열을 사용하면 됩니다.    
 `https://angular.io/cli/generate#class`
 
-### ng g interface [interface-name]
+### ng g i [interface-name]
 
-새 인터페이스를 생성합니다.  
+새 인터페이스를 생성합니다. i 문자는 interface 문자열을 줄여서 쓴 것입니다.  
 `https://angular.io/cli/generate#interface`
 
 ### ng g m [module-name]
 
-새 모듈을 생성합니다. 모듈 전용폴더가 생성됩니다.  
+새 모듈을 생성합니다. 모듈 전용폴더가 생성됩니다. m 문자는 module 문자열을 줄여서 쓴 것입니다.  
 
 * `--routing=true`
 라우팅 정보를 별도의 파일로 취급할 수 있도록 라우팅 모듈 파일을 추가로 생성합니다. 생략하면 생성되지 않고 모듈파일만 생성됩니다.
+
+* `--module=app`  
+새 모듈을 루트 모듈에 등록하는 작업을 추가로 수행합니다.  
 
 * 보다 자세한 내용은 공식 사이트를 참고하세요.  
 `https://angular.io/cli/generate#module`
 
 ## Angular CLI 공식 사이트
 
-기타 자세한 사용법은 공식 사이트를 참고합니다.  
+기타 자세한 사용법은 공식 사이트를 참고하세요.  
 
 * `https://angular.io/cli`
 * `https://cli.angular.io/`
 
 ## 첫 프로젝트 만들기
 
-실습을 통해서 앵귤러 CLI 사용법을 학습합니다. 적당한 폴더를 작업공간으로 간주하고 콘솔에서 커서를 이동 시킵니다. `$` 기호는 프롬프트를 의미합니다. `$` 기호 다음 명령을 따라하세요.
+실습을 통해서 앵귤러 CLI 사용법을 학습합니다. 적당한 폴더를 작업공간(워크 스페이스)으로 간주하고 콘솔에서 커서를 이동 시킵니다. `$` 기호는 프롬프트를 의미합니다. `$` 기호 다음 명령을 따라하세요.
 
-```console
+```bash
 $ ng new my-angular1
 ? Would you like to add Angular routing? No
 ? Which stylesheet format would you like to use? CSS
-... 생략
 ```
 
-```console
+```bash
 $ cd my-angular1
 $ ng serve -o
 ** Angular Live Development Server is listening on localhost:4200, 
@@ -213,11 +332,11 @@ i ｢wdm｣: Compiled successfully.
 
 `ng serve -o` 명령 시 출력된 로그를 살펴 보면 웹 서버를 시작하기 전에 5개의 파일들로 번들링 작업이 진행되었음을 알 수 있습니다. 프로젝트 루트에서 src 폴더 밑에 존재하는 index.html 파일은 자바스크립트 파일을 임포트하는 코드가 없지만 동적으로 빌드하는 과정에서 index.html 파일에 추가가 된다고 이해하시면 되겠습니다.
 
-* runtime.js : 웹 팩 서버관련 로직
-* polyfills.js : 폴리필 라이브러리
-* styles.js : CSS 처리 관련 로직
-* vendor.js : 앵귤러 기술
-* main.js : 개발자가 추가한 로직
+* `runtime.js` : 웹 팩 서버관련 로직
+* `polyfills.js` : 폴리필 라이브러리
+* `styles.js` : CSS 처리 관련 로직
+* `vendor.js` : 앵귤러 기술
+* `main.js` : 개발자가 추가한 로직
 
 개발 중 웹팩을 테스트 웹서버로 사용하는데 위 처리는 개발 중 빌드에 해당합니다. 개발 중 빌드, 배포 테스트 빌드, 실 서비스 빌드는 처리결과가 조금 씩 다릅니다. 이는 뒤에서 자세히 살펴보겠습니다.
 
@@ -474,7 +593,7 @@ i ｢wdm｣: Compiled successfully.
 
 이제부터 컴포넌트를 추가해보면서 학습해 보도록 하겠습니다. 다음 명령을 프로젝트 루트 밑에서 실행하세요. `ng serve` 명령을 수행하고 있는 콘솔창은 그대로 두시고 별도의 콘솔창을 이용합니다. 
 
-```console
+```bash
 $ ng g c books --module=app
 CREATE src/app/books/books.component.html (24 bytes)
 CREATE src/app/books/books.component.spec.ts (621 bytes)
@@ -492,7 +611,7 @@ books라는 이름으로 컴포넌트를 생성하라고 명령하면 컴포넌�
 * `books.component.css` 파일은 컴포넌트 전용 CSS 파일입니다.
 * `app.module.ts` 파일에 새로 생성된 컴포넌트가 등록되는 코드가 추가되어 UPDATE 되었다고 표시되었습니다.
 
-```console
+```bash
 $ ng g c books/book
 CREATE src/app/books/book/book.component.html (23 bytes)
 CREATE src/app/books/book/book.component.spec.ts (614 bytes)
@@ -524,7 +643,7 @@ UPDATE src/app/app.module.ts (472 bytes)
 
 `ng serve` 명령을 수행한 콘솔창을 확인하세요.
 
-```console
+```bash
 Date: 2018-12-05T07:05:25.266Z - Hash: 0d918a5704ebff4207f1 - Time: 3709ms
 4 unchanged chunks
 chunk {main} main.js, main.js.map (main) 13.8 kB [initial] [rendered]

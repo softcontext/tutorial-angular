@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+  font-family: "Roboto";
+}
+
+html {
+  // https://stackoverflow.com/questions/21933356/
+  // sticky-bootstrap-footer-overlapping-content-of-page
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  // Margin bottom by footer height
+  margin-bottom: 80px;
+}
+
+.container {
+  margin-top: 2rem;
+}

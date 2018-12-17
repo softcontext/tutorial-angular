@@ -1,0 +1,151 @@
+.info-section {
+  float: left;
+  width: 100%;
+  padding: 5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.info-section h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.info-section .head-sec {
+  float: left;
+  width: 100%;
+}
+
+.info-section h3 {
+  font-size: 1.4rem;
+}
+
+.info-section p {
+  font-size: 1rem;
+  line-height: 1.3rem;
+}
+
+.info-section .box h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.info-section .box i {
+  font-size: 20px;
+}
+
+.info-section .box {
+  display: flex;
+}
+
+.info-section .text-box {
+  flex: 1 1 0;
+  text-align: left;
+}
+
+.info-section .icon-box {
+  line-height: 1.2;
+  width: 70px;
+}
+
+.info-section .service-block-overlay {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+}
+
+.info-section .service-block-overlay:hover {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 5px;
+  box-shadow: 0 0 90px rgba(0, 0, 0, 0.1);
+  float: left;
+  margin-top: -10px;
+  position: relative;
+  width: 100%;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+}
+
+
+
+
+
+
+
+
+.content-half {
+  color: #fff;
+}
+
+.content-half ul {
+  padding: 0;
+  list-style: none;
+}
+
+.content-half ul li {
+  margin: 15px 0;
+  float: left;
+  width: 100%;
+}
+
+.content-half ul li i {
+  float: left;
+  font-size: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.content-half ul li .list-content {
+  float: left;
+  margin-left: 20px;
+}
+
+.content-half ul li strong {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.content-half .btn {
+  margin-top: 20px;
+}
+
+
+
+
+/*--- three Block Panel ---*/
+
+.three-panel-block {
+  float: left;
+  width: 100%;
+}
+
+.three-panel-block i {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.three-panel-block i.box-round {
+  border-color: inherit;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  border-radius: 50%;
+}
+/*--- Two Block Panel ---*/
+
+.two-panel-block {
+  float: left;
+  width: 100%;
+}
+
+.two-panel-block p {
+  font-size: 16px;
+}
+/*--- Two Block Panel ---*/
+
+.four-panel-block {
+  float: left;
+  width: 100%;
+}

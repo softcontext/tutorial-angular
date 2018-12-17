@@ -1,0 +1,45 @@
+<div class="container">
+  <h2 class="mb-4">{{greeting}}</h2>
+  <div class="form-row mb-4">
+    <div class="col">
+      <label class="mb-0" for="id1">문자열로 취급</label>
+      <input class="form-control" type="text" id="id1" value="greeting">
+    </div>
+    <div class="col">
+      <label class="mb-0" for="id2">Interpolation</label>
+      <input class="form-control" type="text" id="id2" value="{{greeting}}">
+    </div>
+    <div class="col">
+      <label class="mb-0" for="id3">Interpolation : 문자열로 취급</label>
+      <input class="form-control" type="text" id="id3" value="{{'greeting'}}">
+    </div>
+  </div>
+  <div class="form-row mb-4">
+    <div class="col">
+      <label class="mb-0" for="id4">Property Binding 1</label>
+      <input class="form-control" type="text" id="id4" [value]="greeting">
+    </div>
+    <div class="col">
+      <label class="mb-0" for="id5">Property Binding 2</label>
+      <input class="form-control" type="text" id="id5" bind-value="greeting">
+    </div>
+    <div class="col">
+      <label class="mb-0" for="id6">Property Binding 3</label>
+      <input class="form-control" type="text" id="id6" [attr.value]="greeting">
+    </div>
+  </div>
+  <div class="form-row mb-4">
+    <div class="col">
+      <label class="mb-0">Interpolation : 태그가 그대로</label>
+      <p>{{message}}</p>
+    </div>
+    <div class="col">
+      <label class="mb-0">Property Binding Inner 1 : 태그가 그대로</label>
+      <p [innerText]="message"></p>
+    </div>
+    <div class="col">
+      <label class="mb-0">Property Binding Inner 2 : 태그가 처리 됨</label>
+      <p [innerHTML]="message"></p>
+    </div>
+  </div>
+</div>

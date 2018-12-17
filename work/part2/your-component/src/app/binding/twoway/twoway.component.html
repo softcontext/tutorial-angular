@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="form-row mb-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+      <label class="mb-1">Oneway + Oneway</label>
+      <select class="form-control" (change)="citySelected=$event.target.value">
+        <option *ngFor="let city of cities" [value]="city.eng"
+          [selected]="citySelected==city.eng?true:null">
+          {{city.kor}}
+        </option>
+      </select>
+    </div>
+    <div class="ml-auto col-sm-4">
+      <label class="mb-1">Twoway</label>
+      <select class="form-control" [(ngModel)]="citySelected">
+        <option *ngFor="let city of cities" [value]="city.eng">{{city.kor}}</option>
+      </select>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+
+  <div class="form-row mb-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+      <label class="mb-1">Oneway + Oneway</label>
+      <input class="form-control" [value]="citySelected" (input)="citySelected=$event.target.value">
+    </div>
+    <div class="ml-auto col-sm-4">
+      <label class="mb-1">Twoway</label>
+      <input class="form-control" [(ngModel)]="citySelected">
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+
+  <div class="form-row mb-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+      <p class="mb-1">Oneway + Oneway</p>
+      <div class="form-check form-check-inline" *ngFor="let city of cities">
+        <input class="form-check-input" type="radio" [checked]="(city.eng==citySelected?true:null)"
+          (click)="citySelected=$event.target.value" [value]="city.eng" name="city1">
+        <label class="form-check-label">{{city.kor}}</label>
+      </div>
+    </div>
+    <div class="ml-auto col-sm-4">
+      <p class="mb-1">Twoway</p>
+      <div class="form-check form-check-inline" *ngFor="let city of cities;let i=index">
+        <input class="form-check-input" type="radio" [(ngModel)]="citySelected"
+          [value]="city.eng" name="city2" [id]="'city'+i">
+        <label class="form-check-label" [for]="'city'+i">{{city.kor}}</label>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+
+  <div class="form-row mb-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+      <p class="mb-1">Oneway + Oneway</p>
+      <div class="form-check form-check-inline" *ngFor="let addr of address">
+        <input class="form-check-input" type="checkbox"
+          [checked]="addr.checked"
+          (click)="checkedFilter(addr)" name="address1">
+        <label class="form-check-label">{{addr.kor}}</label>
+      </div>
+    </div>
+    <div class="ml-auto col-sm-4">
+      <p class="mb-1">Twoway</p>
+      <div class="form-check form-check-inline" *ngFor="let addr of address; let i=index">
+        <input class="form-check-input" type="checkbox"
+          [(ngModel)]="addr.checked" name="address2" id="{{'addr'+i}}">
+        <label class="form-check-label" for="{{'addr'+i}}">{{addr.kor}}</label>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+
+  <div class="form-row mb-2">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <pre class="bg-light border border-secondary rounded">{{citySelected | json}}</pre>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+
+  <div class="form-row mb-2">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <pre class="bg-light border border-secondary rounded">{{cities | json}}</pre>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+
+  <div class="form-row mb-2">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <pre class="bg-light border border-secondary rounded">{{address | json}}</pre>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+</div>

@@ -1,23 +1,31 @@
-import { Directive, HostListener, HostBinding } from '@angular/core';
+import { Directive, HostListener, HostBinding, ElementRef, Renderer2, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Directive({
   selector: '[menuDropdown]'
 })
 export class MenuDropdownDirective {
-  private isOpen = false;
+  linkGroup = ['about', 'etc'];
+  @Input('menuDropdown') here: ElementRef;
 
-  @HostBinding('class.show')
-  get opened() {
-    return this.isOpen;
+  constructor(
+    private router: Router,
+    private elementRef: ElementRef,
+    private renderer: Renderer2
+  ) {
+
   }
 
   @HostListener('click')
-  open() {
-    this.isOpen = true;
-  }
-
-  @HostListener('mouseleave')
   close() {
-    this.isOpen = false;
+    console.log('MenuDropdownDirective # click');
+    console.log(this.here instanceof ElementRef);
+
+    let url = this.router.url.replace('/', '');
+    console.log(this.linkGroup.includes(url));
+    if (this.linkGroup.includes(url)) {
+        // this.renderer.addClass(this.elementRef.nativeElement, 'show');
+        // this.renderer.addClass(this.here.nativeElement, 'show');
+    }
   }
 }
