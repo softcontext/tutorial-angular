@@ -6,7 +6,7 @@
 
 ## Parameter Type Checking
 
-인터페이스는 객체의 프로퍼티 구성 상태를 체크하는 목적으로 사용할 수 있습니다.
+인터페이스는 객체의 프로퍼티 구성 상태를 체크하는 목적으로 사용할 수 있습니다. 함수가 받는 파라미터는 객체이고 그 객체가 가진 프로퍼티는 어떠한 것들이 있는지 확신할 수 있게 됩니다.
 
 ```TypeScript
 interface User {
@@ -44,7 +44,10 @@ interface User {
 class Member implements User {
   id;
   name;
-  constructor(id: number, name: string) { }
+  constructor(id: number, name: string) { 
+    this.id = id;
+    this.name = name;
+  }
   show(): void {
     console.log(`Id is ${this.id} and Name is ${this.name}`);
   }

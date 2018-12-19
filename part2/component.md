@@ -4,7 +4,7 @@
 
 컴포넌트는 다음 3가지로 구성됩니다.
 
-1. Class : 변수, 이벤트 함수 등을 가지고 있는 자바스크립트 객체입니다.
+1. CLASS : 변수, 이벤트 함수 등을 가지고 있는 생성자 함수입니다. 
 2. HTML : HTML 엘리먼트를 사용하여 화면의 구조를 구성합니다.
 3. CSS : HTML 엘리먼트의 디자인을 담당합니다.
 
@@ -228,7 +228,6 @@ body {
 $ ng g c layout/header --module=app
 $ ng g c layout/footer --module=app
 $ ng g c layout/layout --module=app --flat=true
-$ ng g c root/home --module=app
 ```
 
 ## 화면 레이아웃 구성
@@ -369,7 +368,7 @@ footer {
 
 ## 루트 모듈
 
-**app.component.ts**
+**app.module.ts**
 
 ```ts
 import { FormsModule } from '@angular/forms';
@@ -383,7 +382,7 @@ import { FormsModule } from '@angular/forms';
 })
 ```
 
-앵귤러가 자랑하는 바인딩 처리를 이용하기 위해서는 FormsModule 모듈의 임포트가 필요합니다. 그리고 앵귤러가 미리 만들어서 제공하는 빌트인 구조 디렉티브, 속성 디렉티브를 이용하기 위해서는 CommonModule 모듈의 임포트가 필요합니다. CommonModule 모듈의 임포틑 선언은 BrowserModule 모듈의 임포트가 정의되어 있는 경우 생략할 수 있습니다.
+앵귤러가 자랑하는 양방향 바인딩 처리를 이용하기 위해서는 FormsModule 모듈의 임포트가 필요합니다. 그리고 앵귤러가 미리 만들어서 제공하는 빌트인 구조 디렉티브, 속성 디렉티브를 이용하기 위해서는 CommonModule 모듈의 임포트가 필요합니다. 단, CommonModule 모듈의 임포틑 선언은 BrowserModule 모듈의 임포트가 정의되어 있는 경우 생략할 수 있습니다.
 
 ## 기동 컴포넌트
 
@@ -403,7 +402,17 @@ import { FormsModule } from '@angular/forms';
 
 수업에 필요한 파일들을 미리 만들어 놓고 진행하겠습니다. 한 줄씩 수행하면서 옵션의 의미를 되새기고 결과를 예상해 보시기 바랍니다.
 
+### 첫 화면
+
+```bash
+$ ng g c root/home --module=app
+```
+
+`--module=app` 옵션은 디폴트 값이므로 생략해도 결과가 같습니다.
+
 ### Binding
+
+컴포넌트 클래스가 가진 상태와 HTML 엘리먼트 사이에서 데이터를 연동하는 방법을 연습하기 위해서 4개의 컴포넌트르를 생성합니다.
 
 ```bash
 $ ng g c binding/interpolation --spec=false --inlineTemplate=true --inlineStyle=true
@@ -414,27 +423,42 @@ $ ng g c binding/twoway --module=app
 
 ### Directive
 
+빌트인 디렉티브를 연습하기 위한 컴포넌트 4개를 생성합니다.
+
 ```bash
 $ ng g c directive/built-in/ng-class
 $ ng g c directive/built-in/ng-if
 $ ng g c directive/built-in/ng-for
 $ ng g c directive/built-in/ng-switch
-$ ng g c directive/built-in/ref
+```
 
+엘리먼트 참조를 이용하는 방법을 연습하기 위한 컴포넌트를 생성합니다.
+
+```bash
+$ ng g c directive/built-in/ref
+```
+
+커스텀 디렉티브를 이용하는 방법을 연습하기 위한 컴포넌트와 디렉티브를 생성합니다.
+
+```bash
 $ ng g c directive/custom/highlight
 $ ng g d directive/highlight
 ```
 
 ### Service
 
+서비스와 서비스를 이용하는 컴포넌트를 생성합니다.
+
 ```bash
 $ ng g c service/data-holder
 $ ng g s service/data-holder --spec=false
 ```
 
-서비스의 주 사용처는 아무래도 HTTP 통신과 라우팅 가드 기능이 되겠습니다. 이는 후에 별도의 시간을 가지고 자세히 살펴보도록 하고 여기서는 간단한 서비스 개념과 이용방법만을 살펴봅니다.
+서비스의 주 사용처는 아무래도 HTTP 통신과 라우팅 가드 기능이 되겠습니다. 후에 별도의 시간을 가지고 자세히 살펴보는걸로 하고 여기서는 간단한 서비스 개념과 이용방법만을 살펴보도록 하겠습니다.
 
 ### Pipe
+
+빌트인 파이프를 이용하는 컴포넌트를 생성하고 커스텀 파이프를 만들고 사용해 보겠습니다.
 
 ```bash
 $ ng g c pipe/built-in
@@ -534,4 +558,4 @@ export class AppRoutingModule { }
 </div>
 ```
 
-앵귤러 학습 사이트를 만들어 본다고 생각하면서 학습하면 보다 재미있게 학습하시지 않을까 합니다. 컴포넌트는 하나의 화면 처리단위입니다. 컴포넌트의 화면 크기는 개발자가 마음대로 정하시면 됩니다. 단, 재 사용성 및 관리성에 촛점을 맞추고 크기를 정하시는 것이 좋을 듯 합니다.
+앵귤러 학습 사이트를 만들어 본다고 생각하면서 진행하면 보다 재미있게 학습하시지 않을까 합니다. 컴포넌트는 하나의 화면 처리단위입니다. 컴포넌트의 화면 크기는 개발자가 마음대로 정하시면 됩니다. 단, 재 사용성 및 관리성에 촛점을 맞추고 크기를 정하시는 것이 좋을 듯 합니다. 컴포넌트를 작게 만들고 만들어진 여러 컴포넌트를 조립하는 컴포넌트를 만든 후 재 사용해도 되므로 가능한 한 작게 컴포넌트를 만든다고 생각하는 것도 하나의 방법이 되겠습니다.

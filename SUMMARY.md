@@ -3,7 +3,7 @@
 ## Part Ⅰ. JavaScript's New Wave
 * [Introduction](README.md)
 * [Part Ⅰ. JavaScript's New Wave](part1/README.md)
-* [개발환경 설정](part1/configuration.md)
+* [Development Enviroment Settings](part1/configuration.md)
 * [ECMAScript Essence](part1/ecmascript.md)
     * [const](part1/ecma/const.md)
     * [let](part1/ecma/let.md)
