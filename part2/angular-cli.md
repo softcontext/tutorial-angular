@@ -239,12 +239,20 @@ CSS 파일을 별도로 만들지 않습니다. 생략하면 별도로 CSS 파�
 ### ng g p [pipe-name]
 
 새 파이프를 생성합니다. p 문자는 pipe 문자열을 줄여서 쓴 것입니다.  
-`https://angular.io/cli/generate#pipe`
+`https://angular.io/cli/generate#pipe`  
+
+* `--export=true`
+* `--module=module`
+* `--spec=false`
 
 ### ng g d [directive-name]
 
 새 디렉티브를 생성합니다. d 문자는 directive 문자열을 줄여서 쓴 것입니다.  
-`https://angular.io/cli/generate#directive`
+`https://angular.io/cli/generate#directive`  
+
+* `--export=true`
+* `--module=module`
+* `--spec=false`
 
 ### ng g class [class-name]
 

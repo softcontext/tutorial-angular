@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+// import { CommonModule } from '@angular/common'; // BrowserModule을 임포트하면 생략가능
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule, routes } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { CoreModule } from './core/core.module';
+import { MemberModule } from './member/member.module';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -14,9 +17,16 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule.forRoot(routes)
+    CoreModule,
+    // MemberModule,
+    // MemberModule.forRoot({ color: 'red' }),
+    MemberModule.forRoot({ color: 'blue' }),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    console.log('AppModule()');
+  }
+}

@@ -1,2 +1,28 @@
-<app-title></app-title>
-<router-outlet></router-outlet>
+<div class="title">
+  <app-home></app-home>
+  <app-title></app-title>
+  <!--
+  Uncaught Error: Template parse errors:
+  'app-member' is not a known element:
+  1. If 'app-member' is an Angular component,
+    then verify that it is part of this module.
+  2. If 'app-member' is a Web Component
+    then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas'
+    of this component to suppress this message. ("<div class="title">
+   -->
+  <!-- <app-member></app-member> -->
+  <!-- <app-player></app-player> -->
+</div>
+
+<div class="navi">
+  <nav>
+    <a routerLink="home">Home</a>{{' '}}
+    <a routerLink="title">Title</a>{{' '}}
+    <a routerLink="member">Member</a>{{' '}}
+    <a routerLink="player">Player</a>
+  </nav>
+</div>
+
+<div class="outlet">
+  <router-outlet></router-outlet>
+</div>

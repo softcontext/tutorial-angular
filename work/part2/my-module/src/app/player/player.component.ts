@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CoachHttpService } from './coach-http.service';
+
 @Component({
   selector: 'app-player',
   templateUrl: './player.component.html',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private coachHttpService: CoachHttpService) {
+    console.log(coachHttpService);
+    console.log('PlayerComponent()');
   }
+
+  ngOnInit() { }
 
 }

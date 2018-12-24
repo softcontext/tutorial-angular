@@ -21,6 +21,7 @@ export class TitleComponent implements OnInit {
         this.routes.push(obj)
       }
     }
+    console.log('TitleComponent()');
   }
 
   ngOnInit() {
