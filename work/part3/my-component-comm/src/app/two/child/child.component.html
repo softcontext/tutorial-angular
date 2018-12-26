@@ -1,0 +1,23 @@
+<div class="col mb-2">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="book.img">
+    <div class="card-body">
+      <h5 class="card-title">{{book.title}}</h5>
+      <p class="card-text">This is a wider card with supporting text below
+        as a natural lead-in to additional content.</p>
+      <div class="row mb-2">
+        <div class="col">
+          <p class="card-text text-left">
+            <small class="text-muted text-left">{{book.date | strDate}}</small>
+          </p>
+        </div>
+        <div class="col">
+          <p class="card-text text-right">
+            <small class="text-muted text-right">{{book.price | currency:'KRW':'symbol'}}</small>
+          </p>
+        </div>
+      </div>
+      <button class="btn btn-primary px-4" type="button" (click)="select(book.id)">{{btnText}}</button>
+    </div>
+  </div>
+</div>

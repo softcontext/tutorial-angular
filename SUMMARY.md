@@ -58,5 +58,6 @@
 * [Angular Material](appendix/angular-material.md)
 * [ng-bootstrap](appendix/ng-bootstrap.md)
 * [primeng](appendix/primeng.md)
+* [nebular](appendix/nebular.md)
 * [Sort Pipe](appendix/sort-pipe.md)
 

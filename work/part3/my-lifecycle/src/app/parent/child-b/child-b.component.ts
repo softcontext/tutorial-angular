@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ContentChild, ElementRef } from '@angular/core';
 import {
   OnChanges, SimpleChanges, DoCheck,
   AfterContentInit, AfterContentChecked, AfterViewInit,
@@ -14,10 +14,28 @@ export class ChildBComponent implements OnInit, OnChanges, DoCheck,
   AfterContentInit, AfterContentChecked, AfterViewInit,
   AfterViewChecked, OnDestroy {
 
-  num: number;
-
   constructor() {
     console.log("    B0. ChildAComponent()");
+  }
+
+  num: number;
+
+  @Input('num')
+  set $num(num: number) {
+    console.log("    @Input('num')")
+    console.log("    num =", num);
+    this.num = num;
+  }
+
+  h4: ElementRef;
+
+  // 부모가 이 컴포넌트의 자식으로 지정한 엘리먼트들 중에서 화면참조 문자열로
+  // 참조값을 획득할 수 있으면 대상은 네이티브 엘리먼트를 래핑한 객체다.
+  @ContentChild('title')
+  set h4ElementRef(elementRef: ElementRef) {
+    console.log("    @ContentChild('title')");
+    console.log('    elementRef:', elementRef.nativeElement.innerText); // 사용 가능
+    this.h4 = elementRef;
   }
 
   // 조건 기동: 외부로부터 파라미터를 받을 때만 기동한다.
@@ -28,7 +46,7 @@ export class ChildBComponent implements OnInit, OnChanges, DoCheck,
       let change = changes[propName];
       let currentValue = JSON.stringify(change.currentValue);
       let previousValue = JSON.stringify(change.previousValue);
-      console.log(`${propName}: currentValue = ${currentValue}, previousValue = ${previousValue}`);
+      console.log(`    ${propName}: currentValue = ${currentValue}, previousValue = ${previousValue}`);
     }
   }
 

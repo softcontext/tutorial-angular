@@ -1,0 +1,17 @@
+<h3>Bookshelf</h3>
+
+<hr>
+
+<div class="row">
+  <ng-template ngFor let-book let-i="index" [ngForOf]="selectedBooks">
+    <app-child [book]="book" [btnText]="'Down'" (selectedBookId)="display($event)"></app-child>
+  </ng-template>
+</div>
+
+<hr>
+
+<div class="row">
+  <ng-template ngFor let-book let-i="index" [ngForOf]="books">
+    <app-child [book]="book" [btnText]="'Up'" (selectedBookId)="display($event)"></app-child>
+  </ng-template>
+</div>

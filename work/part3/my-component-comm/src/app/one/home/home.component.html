@@ -1,0 +1,9 @@
+<p>
+  home works!
+</p>
+<div class="container">
+  <p>{{data.title}}</p>
+  <input type="text" name="title" [(ngModel)]="data.title">{{' '}}
+  <button type="button" (click)="backup()">Save</button>
+  <p>{{data.date | date:'yyyy.MM.dd HH:mm:ss'}}</p>
+</div>

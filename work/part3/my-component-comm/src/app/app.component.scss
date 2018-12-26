@@ -1,0 +1,14 @@
+.container.outlet {
+  margin-top: 1rem;
+}
+
+.logger {
+  border: 1px solid silver;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.logger > p {
+  margin: 0;
+}
