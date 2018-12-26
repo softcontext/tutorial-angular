@@ -1,0 +1,13 @@
+.child {
+  border: 1px solid silver;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.child:nth-child(even) {
+  background-color: #87C0D7;
+}
+
+.child:nth-child(odd) {
+  background-color: #C8D6D9;
+}
