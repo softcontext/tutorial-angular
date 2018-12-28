@@ -1,0 +1,66 @@
+<h3 class="mb-4">List of Employees</h3>
+
+<table class="table table-striped table-hover">
+  <caption>List of Employees</caption>
+  <colgroup>
+    <col style="width: 10%; background-color: whitesmoke">
+    <col style="width: 30%">
+    <col style="width: 30%">
+    <col style="width: 30%; background-color: whitesmoke">
+  </colgroup>
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Control</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of emps; let i=index" (dblclick)="updateMode(emp.id, $event)">
+      <ng-template [ngIf]="empUpdateId===emp.id">
+        <th [attr.data-row]="i" scope="row">{{emp.id}}</th>
+        <td [attr.data-row]="i">
+          <input class="form-control" type="text" name="firstName" [(ngModel)]="emp.firstName"
+            #firstNameUpdate="ngModel" required>
+        </td>
+        <td [attr.data-row]="i">
+          <input class="form-control" type="text" name="lastName" [(ngModel)]="emp.lastName"
+            #lastNameUpdate="ngModel" required>
+        </td>
+        <td [attr.data-row]="i" class="text-right">
+          <button class="btn btn-outline-dark" type="button" (click)="updateOne(emp)"
+            [disabled]="firstNameUpdate.invalid || lastNameUpdate.invalid">Update</button>
+          {{' '}}
+          <button class="btn btn-outline-secondary" type="button"
+            (click)="updateCancel()">Cancel</button>
+        </td>
+      </ng-template>
+      <ng-template [ngIf]="empUpdateId!==emp.id">
+        <th [attr.data-row]="i" scope="row">{{emp.id}}</th>
+        <td [attr.data-row]="i">{{emp.firstName}}</td>
+        <td [attr.data-row]="i">{{emp.lastName}}</td>
+        <td [attr.data-row]="i" class="text-right">
+          <button class="btn btn-secondary" type="button" (click)="deleteOne(emp.id)">Delete</button>
+        </td>
+      </ng-template>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row">#</th>
+      <td>
+        <input class="form-control" type="text" name="firstName" [(ngModel)]="empNew.firstName"
+          #firstName="ngModel" required>
+      </td>
+      <td>
+        <input class="form-control" type="text" name="lastName" [(ngModel)]="empNew.lastName"
+          #lastName="ngModel" required>
+      </td>
+      <td class="text-right">
+        <button class="btn btn-dark" type="button" (click)="addOne()"
+          [disabled]="firstName.invalid || lastName.invalid">Add</button>
+      </td>
+    </tr>
+  </tfoot>
+</table>

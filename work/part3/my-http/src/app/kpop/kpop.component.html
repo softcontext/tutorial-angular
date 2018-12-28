@@ -1,0 +1,36 @@
+<h3 class="mb-4">Kpop Idols</h3>
+
+<div class="row">
+  <div class="col-md-3" *ngFor="let idol of idols; let i=index">
+    <div class="card">
+      <div class="card-body">
+        <img class="img-thumbnail mx-auto d-block mb-1" src="./assets/image/{{idol.image}}">
+        <h5 class="card-title">{{idol.name}}</h5>
+        <p class="card-text">Some quick example text to build on the card title.</p>
+        <div class="row">
+          <div class="col">
+            <a href="#" class="card-link">Some</a>
+          </div>
+          <div class="col text-right">
+            <a href="#" class="card-link">Another</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-3" *ngFor="let idol of idolsPromise | async; let i=index">
+    <div class="card">
+      <img class="card-img-top" src="./assets/image/{{idol.image}}">
+      <div class="card-body">
+        <h5 class="card-title">{{idol.name}}</h5>
+        <p class="card-text">Some quick example text to build on the card title.</p>
+        <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>

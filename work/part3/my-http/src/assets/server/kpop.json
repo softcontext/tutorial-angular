@@ -1,0 +1,18 @@
+{
+  "idols": [{
+      "id": 1,
+      "name": "Apink",
+      "image": "apink.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Blackpink",
+      "image": "blackpink.jpg"
+    },
+    {
+      "id": 3,
+      "name": "IZONE",
+      "image": "izone.jpg"
+    }
+  ]
+}

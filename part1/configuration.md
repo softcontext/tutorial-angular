@@ -34,82 +34,100 @@ IDE 도구로써 Atom 에디터를 사용합니다. Atom은 현대적이고 사�
 
 ### 필수 패키지
 
-#### atom-runner
+**atom-runner**  
 Runs scripts inside of Atom.
 
-#### file-icons
+**file-icons**  
 Assign file extension icons and colours for improved visual grepping.
 
-#### highlight-selected
+**highlight-selected**  
 Highlights the current word selected when double clicking.
 
-#### atom-beautify
+**atom-beautify**  
 Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom.
 
-#### autoclose-html
+**autoclose-html**  
 Automates closing of HTML Tags.
 
-#### open-in-browsers
+**open-in-browsers**  
 Open in IE/Chrome/Firefox/Opera.
 
-#### docblockr
+**docblockr**  
 A helper package for writing documentation.
 
-#### emmet
+**emmet**  
 It provides abbreviations for HTML auto-completion and intellisense inspired in CSS selectors, which makes the coding of HTML code much faster and comfortable.
 
-#### atom-typescript
+**atom-typescript**  
 The only TypeScript plugin you will ever need.
 
-#### linter
+**linter**  
 You can visualize errors and other types of messages with ease.
 
-#### linter-eslint
+**linter-eslint**  
 Lint JavaScript on the fly, using ESLint.
 
-#### autocomplete-modules
+**autocomplete-modules**  
 Autocomplete for require/import statements.
 
-#### autocomplete-paths
+**autocomplete-paths**  
 Adds path autocompletion to autocomplete+.
 
 ### 추천 패키지
 
-#### pigments
+**pigments**  
 A package to display colors in project and files.
 
-#### editorconfig
+**editorconfig**  
 Helps developers maintain consistent coding styles between different editors.
 
-#### minimap
+**minimap**  
 A preview of the full source code.
 
-#### git-plus
+**git-plus**  
 Do git things without the terminal.
 
-또는 이미 설치되어 있는 github 패키지를 이용한다.  
-`https://flight-manual.atom.io/using-atom/sections/github-package/`
-
-#### hyperclick
+**hyperclick**  
 Pluggable text-clicking UI for Atom.
 
-#### js-hyperclick
+**js-hyperclick**  
 A hyperclick provider that lets you jump to where variables are defined.
 
-#### markdown-pdf
+**markdown-pdf**  
 Convert markdown to pdf, png or jpeg on the fly.
 
-#### markdown-preview-enhanced
+**markdown-preview-enhanced**  
 One of the 'BEST' markdown preview extensions for Atom editor!
 
-#### markdown-table-editor
+**markdown-table-editor**  
 Markdown table editor/formatter.
 
-#### pdf-view
+**pdf-view**  
 Atom PDF viewer based on PDF.js.
 
-#### todo-show
+**todo-show**  
 Finds all the TODOs, FIXMEs, CHANGEDs, etc. in your project.
 
-#### javascript-snippets
+**javascript-snippets**  
 JavaScript & NodeJS Snippets for Atom
+
+### 기본 패키지 설정 변경
+
+아톰 에디터가 버전업을 함에 따라서 인기 있는 패키지들이 아톰 설치 시 같이 설치되는 기본 패키지가 되었습니다. 이 중에서 쓸만한 옵션들을 소개하고자 합니다.
+
+`File > Settings > Packages > Core Packages`
+
+**autosave**  
+Autosaves editor when they lose focus, are destroyed, or when the window is closed.
+
+`Settings > Enabled`
+
+**spell-check**  
+Highlights misspelled words and shows possible corrections.
+
+`Disable`
+
+**whitespace**  
+Strips trailing whitespace and adds a trailing newline when an editor is saved.
+
+`Settings > Remove Trailing Whitespace` Uncheck

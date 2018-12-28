@@ -1,0 +1,56 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "Denzel",
+      "lastName": "Washington"
+    },
+    {
+      "id": 2,
+      "firstName": "Johnny",
+      "lastName": "Depp"
+    },
+    {
+      "id": 3,
+      "firstName": "Hugh",
+      "lastName": "Jackman"
+    },
+    {
+      "id": 4,
+      "firstName": "Tom",
+      "lastName": "Cruise"
+    },
+    {
+      "id": 5,
+      "firstName": "Chris",
+      "lastName": "Pine"
+    },
+    {
+      "id": 6,
+      "firstName": "111",
+      "lastName": "222"
+    },
+    {
+      "id": 7,
+      "firstName": "22a",
+      "lastName": "333a"
+    }
+  ]
+}
