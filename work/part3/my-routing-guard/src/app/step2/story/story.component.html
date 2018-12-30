@@ -1,0 +1,14 @@
+<form class="mb-4" (submit)="submit()">
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Article</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+      (input)="article=$event.target.value">{{article}}</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<h3>isSubmitted</h3>
+<pre>{{isSubmitted}}</pre>
+
+<h3>article</h3>
+<pre>{{article}}</pre>

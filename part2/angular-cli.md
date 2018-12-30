@@ -202,6 +202,10 @@ When true, does not initialize a git repository.
 
 새 컴포넌트를 생성합니다. 컴포넌트 전용폴더가 생성됩니다. g 문자는 generate 문자열을 줄여서 쓴 것이고 c 문자는 component 문자열을 줄여서 쓴 것입니다.  
 
+* `--dryRun=true`  
+When true, runs through and reports activity without writing out results.  
+결과가 예상되지 않을 때, 실제로 수행하는 대신 수행계획만을 확인할 수 있습니다.
+
 * `--module=app`  
 컴포넌트를 등록할 대상 모듈을 지정합니다.   
   - `app` 문자열은 `AppModule` 클래스에서 `Module` 단어를 뺀 후 소문자로 사용합니다.  

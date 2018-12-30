@@ -41,9 +41,8 @@
 * [Component Life Cycle](part3/life-cycle.md)
 * [Component Communication](part3/communication.md)
 * [HTTP Service](part3/http.md)
-* [Routing Ⅱ](part3/routing-2.md)
-* [Guard Service](part3/guard.md)
-* [Form Control](part3/control.md)
+* [Routing Ⅱ and Guard](part3/routing-2.md)
+* [Form Control](part3/form-control.md)
 
 ## Part Ⅳ. Angular in Action
 * [Part Ⅳ. Angular in Action](part4/README.md)
@@ -54,6 +53,7 @@
 * [Angular UI Library](part4/ui-library.md)
 
 ## Appendix
+* [CSS in Angular](appendix/css-in-angular.md)
 * [Angular with Bootstrap](appendix/angular-bootstrap.md)
 * [Angular Material](appendix/angular-material.md)
 * [ng-bootstrap](appendix/ng-bootstrap.md)
