@@ -111,6 +111,9 @@ Finds all the TODOs, FIXMEs, CHANGEDs, etc. in your project.
 **javascript-snippets**  
 JavaScript & NodeJS Snippets for Atom
 
+**full-path-in-title-bar**  
+Show full filepath in Atom title bar.
+
 ### 기본 패키지 설정 변경
 
 아톰 에디터가 버전업을 함에 따라서 인기 있는 패키지들이 아톰 설치 시 같이 설치되는 기본 패키지가 되었습니다. 이 중에서 쓸만한 옵션들을 소개하고자 합니다.

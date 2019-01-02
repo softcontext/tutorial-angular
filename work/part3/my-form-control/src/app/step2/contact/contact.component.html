@@ -1,0 +1,73 @@
+<!-- class ContactRequest에 대응하는 FormGroup과 연동하기 위해서 formGroup을 설정한다. -->
+<form [formGroup]="contactForm" (ngSubmit)="contactForm.valid && onSubmit()" novalidate>
+  <!-- class PersonalData에 대응하는 FormGroup과 연동하기 위해서 formGroupName을 설정한다. -->
+  <div formGroupName="personalData" novalidate>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <!-- 입력 엘리먼트에 대응하는 FormControl과 연동하기 위해서 formControlName을 설정한다. -->
+      <input formControlName="email" type="email" class="form-control" id="email"
+        aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted" *ngIf="P.email.untouched">
+        We'll never share your email with anyone else.</small>
+      <small id="emailHelp" class="form-text text-muted" *ngIf="P.email.touched && P.email.errors">
+        <ng-template [ngIf]="P.email.errors.required"> Email is required.</ng-template>
+        <ng-template [ngIf]="P.email.errors.minlength"> Email must be at least 5.</ng-template>
+        <ng-template [ngIf]="P.email.errors.validEmail"> Email has a syntax error.</ng-template>
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="mobile">Mobile</label>
+      <input formControlName="mobile" type="tel" class="form-control" id="mobile" placeholder="Mobile">
+      <small id="emailHelp" class="form-text text-muted" *ngIf="P.mobile.touched && P.mobile.errors">
+        <ng-template [ngIf]="P.mobile.errors.required"> Mobile is required.</ng-template>
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+      <select formControlName="country" class="form-control" id="country">
+        <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="requestType">Request Type</label>
+    <select formControlName="requestType" class="form-control" id="requestType">
+      <option *ngFor="let requestType of requestTypes" [value]="requestType">{{requestType}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="text">Text</label>
+    <textarea formControlName="text" class="form-control" id="text" rows="3"></textarea>
+    <small id="emailHelp" class="form-text text-muted" *ngIf="C.text.touched && C.text.errors">
+      <ng-template [ngIf]="C.text.errors.required"> Text is required.</ng-template>
+    </small>
+  </div>
+
+  <button type="reset" (click)="revert()" [disabled]="contactForm.pristine" class="btn btn-warning mr-2">Revert</button>
+  <button type="submit" [disabled]="contactForm.invalid" class="btn btn-primary text-uppercase">Save</button>
+</form>
+
+<h5 class="mt-4">contactForm.value</h5>
+<pre>{{contactForm.value | json}}</pre>
+
+<h5 ngNonBindable>contactForm.controls.personalData.controls.email.errors</h5>
+<pre>#1 : {{contactForm.controls.personalData.controls.email.errors | json}}</pre>
+<pre>#2 : {{contactForm.get('personalData').get('email').errors | json}}</pre>
+<pre>#3 : {{C.personalData.controls.email.errors | json}}</pre>
+<pre>#4 : {{P.email.errors | json}}</pre>
+
+<h5 ngNonBindable>contactForm.controls.personalData.controls.mobile.errors</h5>
+<pre>{{P.mobile.errors | json}}</pre>
+
+<h5 ngNonBindable>contactForm.controls.personalData.controls.country.errors</h5>
+<pre>{{P.country.errors | json}}</pre>
+
+<h5 ngNonBindable>contactForm.controls.requestType.errors</h5>
+<pre>{{C.requestType.errors | json}}</pre>
+
+<h5 ngNonBindable>contactForm.controls.text.errors</h5>
+<pre>{{C.text.errors | json}}</pre>

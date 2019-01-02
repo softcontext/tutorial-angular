@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card card-body">
+      <h3 class="text-center mb-4">Sign-up</h3>
+
+      <div class="alert alert-warning" *ngIf="errorMessage">
+        {{errorMessage}}
+      </div>
+
+      <div class="form-group">
+        <input class="form-control" placeholder="E-mail Address" name="email" type="text"
+          [(ngModel)]="signup.email">
+      </div>
+
+      <div class="form-group">
+        <input class="form-control" placeholder="Password" name="password" type="password"
+          [(ngModel)]="signup.password">
+      </div>
+      <div class="form-group">
+        <input class="form-control" placeholder="Confirm Password" name="password2" type="password"
+          [(ngModel)]="signup.password2">
+      </div>
+
+      <div class="form-group">
+        <select class="form-control" [(ngModel)]="questionSelected">
+          <option *ngFor="let q of questions; let i=index" [value]="i">{{q}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input class="form-control" placeholder="Security Answer" name="answer" type="text"
+          [(ngModel)]="signup.answer">
+      </div>
+
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="checkTerms" [(ngModel)]="signup.readTerms">
+        <label class="form-check-label small" for="checkTerms">
+          I have read and agree to the <a href="#">terms of service</a>
+        </label>
+      </div>
+
+      <button class="btn btn-primary btn-block" type="submit">Sign-up</button>
+    </div>
+  </div>
+</div>
+
+<h5 class="mt-4">questionSelected</h5>
+<pre>{{questionSelected}}</pre>
+
+<h5>signup</h5>
+<pre>{{signup | json}}</pre>

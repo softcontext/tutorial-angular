@@ -1,0 +1,127 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card card-body">
+      <h3 class="text-center mb-4">Sign-up</h3>
+
+      <div class="alert alert-warning" *ngIf="errorMessage" [innerHTML]="errorMessage"></div>
+
+      <!--
+      If ngModel is used within a form tag, either the name attribute must be set or the form
+      control must be defined as 'standalone' in ngModelOptions.
+
+      해결책 2가지
+      1. [ngModelOptions]="{standalone: true}" : select 엘리먼트를 체크 대상에서 제외한다.
+      2. name="readTerms" : checkbox 엘리먼트에 name 속성을 추가한다.
+       -->
+
+      <!-- <form #f="ngForm" (ngSubmit)="f.valid && submit(f)"> -->
+      <form #f="ngForm" (ngSubmit)="submit(f)" novalidate>
+        <div class="form-group">
+          <input class="form-control" placeholder="E-mail Address" name="email" type="text"
+            [(ngModel)]="signup.email" #email="ngModel"
+            required pattern="\w+@\w+\.\w+">
+          <small class="form-text text-muted" *ngIf="email.untouched">
+            We'll never share your email with anyone else.</small>
+          <small class="form-text text-danger" *ngIf="email.touched && email.errors">
+            <ng-template [ngIf]="email.errors.required">Required</ng-template>
+            <ng-template [ngIf]="email.errors.pattern">Please enter a valid email</ng-template>
+          </small>
+        </div>
+
+        <div class="form-group">
+          <input class="form-control" placeholder="Password" name="password" type="password"
+            [(ngModel)]="signup.password" #password="ngModel"
+            required minlength="5" maxlength="20">
+          <small class="form-text text-danger" *ngIf="password.touched && password.errors">
+            <ng-template [ngIf]="password.errors.required">Required</ng-template>
+            <ng-template [ngIf]="password.errors.minlength || password.errors.maxlength">
+              Must be 5~20 characters</ng-template>
+          </small>
+        </div>
+        <div class="form-group">
+          <input class="form-control" placeholder="Confirm Password" name="password2" type="password"
+            [(ngModel)]="signup.password2" #password2="ngModel"
+            required minlength="5" maxlength="20">
+          <ng-template [ngIf]="password2.touched">
+            <small class="form-text text-danger">
+              <ng-template [ngIf]="password2.errors">
+                <ng-template [ngIf]="password2.errors.required">Required</ng-template>
+                <ng-template [ngIf]="password2.errors.minlength || password2.errors.maxlength">
+                  Must be 5~20 characters</ng-template>
+              </ng-template>
+              <ng-template [ngIf]="!password2.errors">
+                <ng-template [ngIf]="isNotPasswordMatch()">Password is not match</ng-template>
+              </ng-template>
+            </small>
+          </ng-template>
+        </div>
+
+        <div class="form-group">
+          <!-- 체크 대상에서 제외된다. -->
+          <select class="form-control" [(ngModel)]="questionSelected" [ngModelOptions]="{standalone: true}" required>
+            <option *ngFor="let q of questions; let i=index" [value]="i">{{q}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input class="form-control" placeholder="Security Answer" name="answer" type="text"
+            [(ngModel)]="signup.answer" #answer="ngModel"
+            required>
+          <small class="form-text text-danger" *ngIf="answer.touched && answer.errors">
+            <ng-template [ngIf]="answer.errors.required">Required</ng-template>
+          </small>
+        </div>
+
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="checkTerms"
+            [(ngModel)]="signup.readTerms" name="readTerms" #readTerms="ngModel"
+            required>
+          <label class="form-check-label small" for="checkTerms">
+            I have read and agree to the <a href="#">terms of service</a>
+          </label>
+          <small class="form-text text-danger" *ngIf="readTerms.touched && readTerms.errors">
+            <ng-template [ngIf]="readTerms.errors.required">Required</ng-template>
+          </small>
+        </div>
+
+        <button class="btn btn-primary btn-block" type="submit" [disabled]="f.invalid">Sign-up</button>
+        <button class="btn btn-primary btn-block" type="submit" [disabled]="isProceeding">Sign-up</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<h5 class="mt-4">questionSelected</h5>
+<pre>{{questionSelected}}</pre>
+
+<h5>signup</h5>
+<pre>{{signup | json}}</pre>
+
+<hr>
+
+<h3>Validation</h3>
+
+<h5>email.errors</h5>
+<pre>{{email.errors | json}}</pre>
+
+<h5>password.errors</h5>
+<pre>{{password.errors | json}}</pre>
+
+<h5>password2.errors</h5>
+<pre>{{password2.errors | json}}</pre>
+
+<h5>questionSelected.errors</h5>
+<pre>{{questionSelected.errors | json}}</pre>
+<p>
+  [ngModelOptions]="&#123;standalone: true&#125;" 설정으로 체크 대상에서 제외된다.
+  종합 리포팅 ngForm에도 반영되지 않는다.
+</p>
+
+<h5>answer.errors</h5>
+<pre>{{answer.errors | json}}</pre>
+
+<h5>readTerms.errors</h5>
+<!-- #readTerms="ngModel" -->
+<pre>{{readTerms.errors | json}}</pre>
+<!-- name="readTerms" -->
+<pre>{{f.controls.readTerms?.errors | json}}</pre>

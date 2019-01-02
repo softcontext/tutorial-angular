@@ -1,0 +1,30 @@
+// .form-control:focus {
+//     border-color: rgba(126, 239, 104, 0.8);
+//     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+//     outline: 0 none;
+// }
+
+.itsok {
+  float: right;
+  margin-right: 10px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 9999;
+  color: blue;
+}
+
+.form-group .ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+.ng-invalid {}
+
+.ng-valid {}
+
+.ng-untouched {}
+
+.ng-touched {}
+
+.ng-pristine {}
+
+.ng-dirty {}

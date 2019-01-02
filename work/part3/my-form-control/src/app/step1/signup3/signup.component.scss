@@ -1,0 +1,34 @@
+// 부트스트랩의 폼 엘리먼트 포커스 효과 흉내내기
+// .form-control:focus {
+//     border-color: rgba(126, 239, 104, 0.8);
+//     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+//     outline: 0 none;
+// }
+
+.itsok {
+  float: right;
+  margin-right: 10px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 9999;
+  color: blue;
+}
+
+// 폼 엘리먼트를 건드렸는데 유효하지 않다면
+// 테두리를 빨간색으로 칠해서 부드럽게
+// 사용자에게 의미를 전달합니다.
+.form-group .ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+.ng-invalid {}
+
+.ng-valid {}
+
+.ng-untouched {}
+
+.ng-touched {}
+
+.ng-pristine {}
+
+.ng-dirty {}

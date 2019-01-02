@@ -24,17 +24,17 @@
 
 **4. canLoad**
 
-모듈을 `Lazy Loading` 하는 경우, 모듈의 컴포넌트를 화면에 표시하기 전 작동하는 가드입니다.
+모듈을 `Lazy Loading` 하는 경우, 모듈의 컴포넌트를 화면에 표시하기 전 작동하는 가드입니다. 이 가드로 모듈의 기동여부를 결정할 수 있습니다. 모듈이 기동한 다음부터는 다시 작동하지 않습니다. 가드는 서비스의 일종으로 싱글톤으로 사용되지만 만약 모듈이 기동되지 못했다면 이 가드부터 다시 생성되어 처리됩니다.
 
 **5. CanActivateChild**
 
-중첩 컴포넌트를 화면에 배치할 때, 배치되는 컴포넌트가 `<router-outlet>`을 가진 경우, 이 영역에 무슨 컴포넌트를 추가적으로 배치할 것인지 결정해야 합니다. 이렇게 배치되는 자식 컴포넌트들에게 공통적으로 적용할 가드를 설정할 수 있습니다.
+중첩 컴포넌트를 화면에 배치할 때, 배치되는 컴포넌트가 `<router-outlet>`을 가진 경우, 이 영역에 무슨 컴포넌트를 추가적으로 배치할 것인지 결정해야 합니다. 이렇게 배치되는 자식 컴포넌트들에게 공통적으로 적용하여 기동여부를 결정할 수 있습니다. 이 가드에서 'false'를 리턴하면 결국 자식 컴포넌트를 구성할 수 없게되고 부모의 화면도 완성할 수 없으므로 모든 라우팅 처리요청이 취소됩니다.
 
-## Path Variable
+## Path Variable(URL Segment)
 
-사용자 친화적인 URL을 선호하는 추세입니다. 그에 따라서, URL 문자열의 일부를 변수화하여 이와 관련한 데이터를 구할 때 사용합니다. 
+최근에는 사용자 친화적인 URL을 선호하는 추세입니다. 그에 따라서, URL 문자열의 일부를 변수화하여 이와 관련한 데이터를 구할 때 사용합니다. 
 
-예를 들어서, 다음과 같은 URL 문자열을 사용하는 경우, 맨 끝에 숫자는 키 값의 역할을 수행합니다.
+예를 들어서, `contact/1` 같은 URL 문자열을 사용하는 경우, 맨 끝에 숫자는 키 값의 역할을 수행합니다.
 
 **Step 1. 사용 URL 패턴 결정**
 
@@ -529,7 +529,8 @@ export class StoryCanDeactivateGuard implements CanActivate, CanDeactivate<Story
     component: StoryComponent,
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
-    nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    nextState?: RouterStateSnapshot)
+    : Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (!component.isSubmitted) {
       return window.confirm(
         `When switches, unsaved status is lost.\nReally want to change the path?`);
@@ -551,7 +552,7 @@ $ ng g c step3/MemberOnly
 $ ng g g step3/MemberOnlyCanActivate
 ```
 
-이번에 다룰 `CanActivate` 가드는 최대한 다음처럼 스토리를 짜서 적용해 보겠습니다.
+이번에 다룰 `CanActivate` 가드는 최대한 다음과 같은 스토리를 적용해 보겠습니다.
 
 1. `login` 컴포넌트는 로그인 화면을 제공한다.
 2. `login` 컴포넌트에서 사용자 인증정보를 받아서 `MemberAuth` 서비스에게 전달하고 인증여부를 문의한다.
@@ -823,9 +824,9 @@ const routes: Routes = [
 
 `[routerLinkActiveOptions]="{exact:true}"` 설정을 추가하지 않으면 URL의 일부로 `parent` 문자열이 있는 경우 다음과 같은 모든 경우에 `routerLinkActive="active"` 코드가 적용됩니다.
 
-* http://localhost:4200/parent
-* http://localhost:4200/parent/child1?num=7
-* http://localhost:4200/parent/child3/20
+* `http://localhost:4200/parent`
+* `http://localhost:4200/parent/child1?num=7`
+* `http://localhost:4200/parent/child3/20`
 
 **parent.component.html**
 

@@ -4,7 +4,7 @@ ECMAScript, TypeScript를 학습한 후 Angular Framework를 학습합니다.
 
 [Table of Contents](SUMMARY.md)
 
-작업 중 입니다.
+작업 중 입니다. 위 목차를 눌러서 이용하세요.
 
 2018.12.2
 송석원
