@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    h1 {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Red Color Title</h1>
+  <header></header>
+  <h1>Red Color Title</h1>
+
+  <script type="text/javascript">
+    const header = document.querySelector('header');
+    const shadowRoot = header.attachShadow({mode: 'open'});
+    shadowRoot.innerHTML = `
+      <style>
+        h1 {
+          color: blue;
+        }
+      </style>
+      <h1>Blue Color Title</h1>
+    `;
+  </script>
+</body>
+
+</html>

@@ -51,6 +51,7 @@
 * [HTTP Service](part3/http.md)
 * [Routing Ⅱ and Guard](part3/routing-2.md)
 * [Form Control](part3/form-control.md)
+* [CSS in Angular](part3/css-in-angular.md)
 
 ## Part Ⅳ. Angular in Action
 * [Part Ⅳ. Angular in Action]
@@ -61,7 +62,6 @@
 * [Angular UI Library]
 
 ## Appendix
-* [CSS in Angular]
 * [Angular with Bootstrap](appendix/angular-bootstrap.md)
 * [Angular Material](appendix/angular-material.md)
 * [ng-bootstrap](appendix/ng-bootstrap.md)

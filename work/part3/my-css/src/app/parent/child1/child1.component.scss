@@ -1,0 +1,8 @@
+// 컴포넌트의 스타일은 컴포넌트 템플릿에게만 적용되는 로컬 방식입니다.
+// 임포트 한 스타일시트의 범위도 로컬 방식입니다.
+@import "styles.css";
+
+// p:hover {
+//   background-color: black;
+//   color: white;
+// }

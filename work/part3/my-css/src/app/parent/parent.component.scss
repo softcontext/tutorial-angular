@@ -1,0 +1,27 @@
+:host(.red) {
+  color: red;
+}
+
+:host(.blue) {
+  color: blue;
+}
+
+:host-context(.bg-white) {
+  background-color: white;
+  display: block;
+}
+
+// /deep/ p:hover {
+//   background-color: black;
+//   color: white;
+// }
+
+// ::ng-deep p:hover {
+//   background-color: black;
+//   color: white;
+// }
+
+:host /deep/ app-child1 p:hover {
+  background-color: black;
+  color: white;
+}

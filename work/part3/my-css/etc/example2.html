@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    const h1 = document.createElement('h1');
+    h1.textContent = 'Hello world!';
+
+    const header = document.createElement('header');
+    // 이번에는 돔 엘리먼트에 직접 추가하지 않는다.
+    // header.appendChild(h1);
+
+    // header를 Shadow Host로 삼고 Shadow Root 객체를 얻는다.
+    const shadowRoot = header.attachShadow({mode: 'open'});
+    // Shadow Root에 원하는 엘리먼트를 추가한다.
+    // 이러면 격리된 상태로 엘리먼트를 장착하는 것이다.
+    // shadowRoot.innerHTML = '<h1>Hello</h1>'; 방식도 가능하다.
+    shadowRoot.appendChild(h1);
+
+    // Shadow Host는 Shadow Root의 Host를 지칭한다.
+    // header가 Shadow Host이다.
+    console.log(shadowRoot.host === header);
+    // Shadow Root는 Shadow Host와 연결된 돔 조각이다.
+    console.log(shadowRoot === header.shadowRoot);
+
+    document.body.appendChild(header);
+  </script>
+</body>
+
+</html>

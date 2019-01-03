@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <!--
+  Light DOM은 컴포넌트 사용자가 작성하는 마크업(태그)입니다.
+  Light DOM은 컴포넌트의 Shadow DOM 외부에서 사용됩니다.
+  Light DOM은 해당 엘리먼트의 실제 자식입니다.
+   -->
+  <button is="better-button">
+    <!-- the image and span are better-button's light DOM -->
+    <img src="settings-work-tool.svg" slot="icon">
+    <span>Settings</span>
+  </button>
+
+  <hr>
+
+  <!--
+  Shadow DOM은 컴포넌트 작성자가 쓰는 DOM입니다.
+  Shadow DOM은 컴포넌트의 로컬입니다. 내부 구조, 범위가 지정된 CSS를 정의하며 구현 세부정보를 캡슐화합니다.
+  Shadow DOM은 컴포넌트 사용자가 추가적으로 작성한 Light DOM의 마크업(커스텀 태그)을 렌더링하는 방법을 정의합니다.
+   -->
+  #shadow-root
+  <style></style>
+  <slot name="icon"></slot>
+  <span id="wrapper">
+    <slot>Button</slot>
+  </span>
+
+  <hr>
+
+  <!--
+  평면화된 DOM은 브라우저가 개발자의 Light DOM을 Shadow DOM으로 배포한 결과이며 최종 제품을 렌더링합니다.
+  평면화된 DOM은 DevTools에서 궁극적으로 보여지는 결과이고 페이지에 렌더링되는 항목입니다.
+   -->
+  <button is="better-button">
+    #shadow-root
+    <style></style>
+    <slot name="icon">
+      <img src="settings-work-tool.svg" slot="icon">
+    </slot>
+    <slot>
+      <span>Settings</span>
+    </slot>
+  </button>
+
+  <hr>
+
+  <!--
+  <slot> 요소
+  Shadow DOM은 <slot> 요소를 사용하여 여러 DOM 트리를 함께 구성합니다.
+  슬롯은 개발자가 자신의 마크업을 사용하여 채울 수 있는 구성 요소 내부의 자리표시자입니다.
+  슬롯을 한 개 이상 정의하여 외부 마크업을 초대하여 구성 요소의 Shadow DOM에 렌더링합니다.
+  기본적으로 '개발자의 마크업을 여기에 렌더링한다'고 말하는 것과 같습니다.
+
+  참고: 슬롯은 웹 구성 요소에 대한 '선언적 API'를 만드는 방법입니다.
+  슬롯은 사용자의 DOM을 혼합하여 전체 구성 요소를 렌더링하는 데 도움을 주므로 여러 DOM 트리를 함께 구성합니다.
+
+  <slot>이 요소를 초대할 때 요소를 사용하여 Shadow DOM 경계를 '교차'할 수 있습니다.
+  이와 같은 요소를 분산 노드라고 합니다. 개념상 분산 노드는 다소 기이하게 보일 수 있습니다.
+  슬롯은 DOM을 물리적으로 이동하지 않고 Shadow DOM 내부의 다른 위치에서 렌더링합니다.
+
+  구성 요소는 Shadow DOM에서 슬롯을 0개 이상 정의할 수 있습니다.
+  슬롯은 비어 있거나 대체 콘텐츠를 제공할 수 있습니다.
+  사용자가 Light DOM 콘텐츠를 제공하지 않는 경우 슬롯은 대체 콘텐츠를 렌더링합니다.
+   -->
+
+  <!-- Default slot. If there's more than one default slot, the first is used. -->
+  <slot></slot>
+
+  <!-- default slot with fallback content -->
+  <slot>Fancy button</slot>
+
+  <slot>
+    <!-- default slot entire DOM tree as fallback -->
+    <h2>Title</h2>
+    <summary>Description text</summary>
+  </slot>
+
+  <hr>
+
+  <!--
+  또한 명명된 슬롯을 만들 수도 있습니다.
+  명명된 슬롯은 Shadow DOM에서 사용자가 이름으로 참조하는 특정 구멍입니다.
+   -->
+
+  #shadow-root
+  <div id="tabs">
+    <slot id="tabsSlot" name="title"></slot>
+  </div>
+  <div id="panels">
+    <slot id="panelsSlot"></slot>
+  </div>
+
+  <hr>
+
+  <!--
+  컴포넌트 사용자는 다음과 같이 <fancy-tabs>를 선언합니다.
+   -->
+
+  <fancy-tabs>
+    <button slot="title">Title</button>
+    <button slot="title" selected>Title 2</button>
+    <button slot="title">Title 3</button>
+    <section>content panel 1</section>
+    <section>content panel 2</section>
+    <section>content panel 3</section>
+  </fancy-tabs>
+
+  <!-- Using <h2>'s and changing the ordering would also work! -->
+  <fancy-tabs>
+    <h2 slot="title">Title</h2>
+    <section>content panel 1</section>
+    <h2 slot="title" selected>Title 2</h2>
+    <section>content panel 2</section>
+    <h2 slot="title">Title 3</h2>
+    <section>content panel 3</section>
+  </fancy-tabs>
+
+  <hr>
+
+  <!--
+  그리고 평면화된 트리의 모습은 다음과 같습니다.
+  컴포넌트가 여러 구성을 처리할 수 있지만 평면화된 DOM 트리는 동일한 상태를 유지합니다.
+  또한 <button>에서 <h2>로 전환할 수도 있습니다.
+  이 컴포넌트는 <select>와 마찬가지로 여러 유형의 자식을 처리하기 위해 작성되었습니다.
+   -->
+
+  <fancy-tabs>
+    #shadow-root
+    <div id="tabs">
+      <slot id="tabsSlot" name="title">
+        <button slot="title">Title</button>
+        <button slot="title" selected>Title 2</button>
+        <button slot="title">Title 3</button>
+      </slot>
+    </div>
+    <div id="panels">
+      <slot id="panelsSlot">
+        <section>content panel 1</section>
+        <section>content panel 2</section>
+        <section>content panel 3</section>
+      </slot>
+    </div>
+  </fancy-tabs>
+
+  <script type="text/javascript">
+
+  </script>
+</body>
+
+</html>

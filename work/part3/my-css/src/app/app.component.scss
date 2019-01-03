@@ -1,0 +1,13 @@
+// app.component.scss에 설정한 내용
+// 컴포넌트 스타일의 주석은 나중에 사라집니다.
+:host {
+  background-color: silver;
+  // Shadow DOM은 기본적으로 inline입니다.
+  // block으로 변경해야 background-color가 적용됩니다.
+  display: block;
+  padding: 1rem;
+}
+
+// p {
+//   color: yellow;
+// }
