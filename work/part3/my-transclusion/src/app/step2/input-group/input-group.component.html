@@ -1,0 +1,11 @@
+<!-- input 엘리먼트는 사용자가 이 컴포넌트를 사용할 때 Projection 해 주는 방식으로 변경한다.
+<i class="fa" [ngClass]="classes" (click)="isFocus=!isFocus"></i>
+<input (focus)="isFocus=true" (blur)="isFocus=false" (keyup)="eventEmitter.emit(input.value)" #input>
+ -->
+
+<i class="fa" [ngClass]="classes"></i>
+<!-- select에 의해서 소비되지 않는 엘리먼트들을 배치한다. -->
+<ng-content></ng-content>
+
+<!-- 투영된 엘리먼트들 중에서 클래스 active를 가진 input 태그만을 소비할 수 있다. -->
+<!-- <ng-content select="input.active"></ng-content> -->

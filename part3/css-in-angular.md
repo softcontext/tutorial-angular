@@ -439,6 +439,7 @@ $ ng new my-css
 ```
 
 ```bash
+$ cd my-css
 $ ng g c parent
 $ ng g c parent/child1
 $ ng g c parent/child2

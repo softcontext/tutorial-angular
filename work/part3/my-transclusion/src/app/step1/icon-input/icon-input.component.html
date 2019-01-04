@@ -1,0 +1,2 @@
+<i class="fa" [ngClass]="classes" (click)="isFocus=!isFocus"></i>
+<input (focus)="isFocus=true" (blur)="isFocus=false" (keyup)="eventEmitter.emit(input.value)" #input>

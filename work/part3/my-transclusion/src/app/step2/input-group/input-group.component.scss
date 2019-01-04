@@ -1,0 +1,29 @@
+:host {
+  display: inline-block;
+  border: 1px solid gray;
+}
+
+i {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+// <ng-content></ng-content> 안에 존재하는 엘리먼트에 접근하지 못 한다.
+// 컴포넌트가 가진 엘리먼트에는 _ngcontent-* 구분 속성이 추가되지만
+// 투영된 엘리먼트에는 구분 속성이 추가되지 않기 때문이다.
+// input {
+//   border: none;
+//   outline: none;
+// }
+
+// :host 선택자로 컴포넌트 안 쪽에 있는 대상에게만 영향을 준다.
+// ::ng-deep 선태자로 컴포넌트 자신 뿐 아니라
+// 자식 컴포넌트가 가진 대상에게도 영향을 주며 여기에는 투영된 콘텐츠도 포함된다.
+:host ::ng-deep input {
+  border: none;
+  outline: none;
+}
+
+:host(.focus) {
+  border: 1px solid blue;
+}

@@ -44,6 +44,7 @@
 * [Routing Ⅱ and Guard](part3/routing-2.md)
 * [Form Control](part3/form-control.md)
 * [CSS in Angular](part3/css-in-angular.md)
+* [Transclusion](part3/transclusion.md)
 
 ## Part Ⅳ. Angular in Action
 * [Part Ⅳ. Angular in Action](part4/README.md)

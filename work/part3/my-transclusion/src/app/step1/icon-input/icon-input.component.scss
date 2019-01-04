@@ -1,0 +1,18 @@
+:host {
+  display: inline-block;
+  border: 1px solid gray;
+}
+
+i {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+:host(.focus) {
+  border: 1px solid blue;
+}
