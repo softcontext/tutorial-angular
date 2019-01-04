@@ -52,22 +52,25 @@
 * [Routing Ⅱ and Guard](part3/routing-2.md)
 * [Form Control](part3/form-control.md)
 * [CSS in Angular](part3/css-in-angular.md)
+* [Transclusion](part3/transclusion.md)
 
 ## Part Ⅳ. Angular in Action
 * [Part Ⅳ. Angular in Action]
-* [To Do List]
+* [To Do List by Angular]
+    * [by Vue.js]
+    * [by React]
+* [Logging to Server]
 * [Pagination]
-* [Login Authentication]
-* [Logging]
-* [Angular UI Library]
 
 ## Appendix
-* [Angular with Bootstrap](appendix/angular-bootstrap.md)
-* [Angular Material](appendix/angular-material.md)
+* [Bootstrap 4](appendix/angular-bootstrap.md)
+* [Material](appendix/angular-material.md)
 * [ng-bootstrap](appendix/ng-bootstrap.md)
 * [primeng](appendix/primeng.md)
-* [nebular]
-* [Sort Pipe]
+* [nebular](appendix/nebular.md)
+
+## Good Examples
+* [Pipe Sort]
 
 작업 중 입니다. 위 목차를 눌러서 이용하세요.
 
