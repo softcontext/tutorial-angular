@@ -1,0 +1,70 @@
+<div class="btn-group" dropdown>
+  <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+    Button dropdown <span class="caret"></span>
+  </button>
+  <ul *dropdownMenu class="dropdown-menu" role="menu">
+    <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+    <li class="divider dropdown-divider"></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+    </li>
+  </ul>
+</div>
+
+<hr>
+
+<alert type="success">
+  <strong>Well done!</strong> You successfully read this important alert message.
+</alert>
+<alert type="info">
+  <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+</alert>
+<alert type="warning">
+  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+</alert>
+<alert type="danger">
+  <strong>Oh snap!</strong> Change a few things up and try submitting again.
+</alert>
+
+<hr>
+
+<form [formGroup]="myForm">
+  <div class="row">
+    <div class="col-xs-12 col-md-5 col-lg-4 form-group">
+      <input class="form-control" #dpYMD="bsDatepicker" bsDatepicker formControlName="myDateYMD"
+        [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }">
+    </div>
+    <div class="col-xs-12 col-12 col-md-3 form-group">
+      <button class="btn btn-success" (click)="dpYMD.toggle()"
+        [attr.aria-expanded]="dpYMD.isOpen">Date Picker</button>
+    </div>
+  </div>
+</form>
+
+<pre>{{myForm.value.myDateYMD | date:'yyyy.MM.dd'}}</pre>
+
+<hr>
+
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Open modal</button>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque delectus enim esse excepturi, impedit,
+      iste magnam officia optio, quam quis quisquam saepe sint unde velit vitae! Animi in iusto ut?</p>
+    <button type="button" class="btn btn-primary" popover="Vivamus sagittis">popover</button>
+    <button type="button" class="btn btn-primary" tooltip="Vivamus sagittis">tooltip</button>
+    <button type="button" class="btn btn-primary" (click)="confirm()">Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+  </div>
+</ng-template>
+
+<pre class="card card-block card-header">{{message}}</pre>
+
+<!-- <router-outlet></router-outlet> -->

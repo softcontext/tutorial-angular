@@ -55,22 +55,23 @@
 * [Transclusion](part3/transclusion.md)
 
 ## Part Ⅳ. Angular in Action
-* [Part Ⅳ. Angular in Action]
-* [To Do List by Angular]
-    * [by Vue.js]
-    * [by React]
-* [Logging to Server]
-* [Pagination]
+* Part Ⅳ. Angular in Action
+* To Do List by Angular
+    * by Vue.js
+    * by React
+* Logging to Server
+* Pagination
 
 ## Appendix
 * [Bootstrap 4](appendix/angular-bootstrap.md)
-* [Material](appendix/angular-material.md)
-* [ng-bootstrap](appendix/ng-bootstrap.md)
+* [Angular Material](appendix/angular-material.md)
 * [primeng](appendix/primeng.md)
+* [ng-bootstrap](appendix/ng-bootstrap.md)
+* [ngx-bootstrap](appendix/ngx-bootstrap.md)
 * [nebular](appendix/nebular.md)
 
-## Good Examples
-* [Pipe Sort]
+## Hall of Fame
+* Pipe Sort
 
 작업 중 입니다. 위 목차를 눌러서 이용하세요.
 

@@ -56,11 +56,12 @@
 
 ## Appendix
 * [Bootstrap 4](appendix/angular-bootstrap.md)
-* [Material](appendix/angular-material.md)
-* [ng-bootstrap](appendix/ng-bootstrap.md)
+* [Angular Material](appendix/angular-material.md)
 * [primeng](appendix/primeng.md)
+* [ng-bootstrap](appendix/ng-bootstrap.md)
+* [ngx-bootstrap](appendix/ngx-bootstrap.md)
 * [nebular](appendix/nebular.md)
 
-## Good Examples
+## Hall of Fame
 * [Pipe Sort](example/sort-pipe.md)
 
