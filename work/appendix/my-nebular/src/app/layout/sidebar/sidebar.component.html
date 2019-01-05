@@ -1,0 +1,12 @@
+<nb-card size="xxlarge">
+  <nb-card-body>
+    <nb-menu tag="menu" [items]="menuItems"></nb-menu>
+    <router-outlet></router-outlet>
+    <!-- Menu Control -->
+    <h3>Selected item: {{ selectedItem }}</h3>
+    <button nbButton size="xsmall" (click)="addMenuItem()">Add Menu Item</button>
+    <button nbButton size="xsmall" (click)="collapseAll()">Collapse all menu items</button>
+    <button nbButton size="xsmall" (click)="navigateHome()">Home</button>
+    <button nbButton size="xsmall" (click)="getSelectedItem()">Get Selected Item</button>
+  </nb-card-body>
+</nb-card>

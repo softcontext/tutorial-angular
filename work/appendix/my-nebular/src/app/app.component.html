@@ -1,0 +1,16 @@
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <a href="#" (click)="toggle()"><i class="nb-menu"></i></a>
+  </nb-layout-header>
+
+  <nb-sidebar>
+    <app-sidebar></app-sidebar>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    Page Content <button type="button" class="btn btn-primary">Button</button>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+</nb-layout>
