@@ -1,0 +1,10 @@
+.box {
+  border: 1px solid gray;
+  padding: 8px;
+  display: inline-block;
+}
+
+.success-box {
+  @extend .box;
+  border: 1px solid green;
+}

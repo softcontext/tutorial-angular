@@ -1,0 +1,13 @@
+%box {
+  padding: 0.5em;
+}
+
+.success-box {
+  @extend %box;
+  color: green;
+}
+
+.error-box {
+  @extend %box;
+  color: red;
+}

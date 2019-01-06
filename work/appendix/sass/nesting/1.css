@@ -1,0 +1,13 @@
+table.klass {
+  margin: 2em 0;
+}
+
+table.klass td.clazz {
+  text-align: right;
+}
+
+li {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 1.3em;
+}

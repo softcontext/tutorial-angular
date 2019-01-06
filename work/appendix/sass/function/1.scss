@@ -1,0 +1,20 @@
+$buttonColor: #2ecc71;
+$buttonDark: darken($buttonColor, 10%);
+$buttonDarker: darken($buttonDark, 10%);
+
+button {
+  outline: 0;
+  border: 0;
+  padding: 10px 30px 5px 30px;
+  background: $buttonColor;
+  box-shadow: 0 5px 0 $buttonDark;
+  border-radius: 3px;
+  font-size: 1rem;
+  color: white;
+  display: inline-block;
+
+  &:hover {
+    background: $buttonDark;
+    box-shadow: 0 5px 0 $buttonDarker;
+  }
+}

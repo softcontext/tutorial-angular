@@ -1,0 +1,12 @@
+@mixin headline($color, $size) {
+  color: $color;
+  font-size: $size;
+}
+
+h1 {
+  @include headline(green, 3rem);
+}
+
+p {
+  @include headline(gray, 1rem);
+}

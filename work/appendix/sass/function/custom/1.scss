@@ -1,0 +1,14 @@
+@function calc-percent($target, $container) {
+  @return ($target / $container) * 100%;
+}
+@function cp($target, $container) {
+  @return calc-percent($target, $container);
+}
+
+.my-module {
+  width: calc-percent(650px, 1000px);
+}
+
+.your-module {
+  width: cp(650px, 1000px);
+}

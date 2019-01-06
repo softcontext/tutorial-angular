@@ -1,0 +1,19 @@
+@mixin media($queryString) {
+  @media #{$queryString} {
+    @content;
+  }
+}
+
+.container {
+  width: 900px;
+  @include media("(max-width: 767px)") { 
+    // 중괄호를 사용하면 처리 후 결과가 밑으로 분리됩니다.
+    width: 100%;
+  }
+}
+
+#target {
+  @include media("(max-width: 900px)") {
+    color: red;
+  }
+}

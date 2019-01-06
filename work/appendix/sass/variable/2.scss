@@ -1,0 +1,24 @@
+$primary-color: #333;
+$secondary-color: #777;
+
+body {
+  $primary-color: #444 !global; 
+  // !global 옵션: 전역적으로 적용된다.
+  $secondary-color: #888 !global !default; 
+  // !default 옵션: 이미 $secondary-color 변수가 존재하기 때문에 무시된다.
+  $title-color: red !global !default; 
+  // !default 옵션: $title-color이 없으므로 처리된다. !global 옵션: 전역적으로 적용된다.
+  color: $primary-color;
+}
+
+p {
+  color: $primary-color;
+}
+
+small {
+  color: $secondary-color;
+}
+
+h1 {
+  color: $title-color;
+}

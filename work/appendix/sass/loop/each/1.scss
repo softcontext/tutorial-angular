@@ -1,0 +1,8 @@
+$colors: red, orange, yellow, green, blue;
+$i: 1;
+@each $color in $colors {
+  li:nth-of-type(#{$i}) {
+    color: $color;
+  }
+  $i: $i + 1;
+}

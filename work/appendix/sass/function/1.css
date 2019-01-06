@@ -1,0 +1,16 @@
+button {
+  outline: 0;
+  border: 0;
+  padding: 10px 30px 5px 30px;
+  background: #2ecc71;
+  box-shadow: 0 5px 0 #25a25a;
+  border-radius: 3px;
+  font-size: 1rem;
+  color: white;
+  display: inline-block;
+}
+
+button:hover {
+  background: #25a25a;
+  box-shadow: 0 5px 0 #1b7943;
+}

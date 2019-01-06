@@ -1,0 +1,12 @@
+$colors: (
+  'strawberry': red,
+  'orange': orange,
+  'lemon': yellow,
+  'letuce': green,
+  'blueberry': blue,
+);
+@each $section, $color in $colors {
+  .#{$section} {
+    color: $color;
+  }
+}

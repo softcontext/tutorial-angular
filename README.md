@@ -6,6 +6,14 @@
 * 최대한 실무에 바로 사용할 수 있도록 예제 프로젝트 소스코드에 심혈을 기울였습니다.
 * 2019년 모든 개발자분들에게 행운이 함께 하기를 기원합니다.
 
+## Version
+
+* OS: win32 x64
+* Node: 10.14.1
+* Angular CLI: 7.1.1
+* Angular: ~7.1.0
+* typescript: 3.1.6
+
 # Summary
 
 ## Part Ⅰ. JavaScript's New Wave
@@ -69,6 +77,7 @@
 * [ng-bootstrap](appendix/ng-bootstrap.md)
 * [ngx-bootstrap](appendix/ngx-bootstrap.md)
 * [nebular](appendix/nebular.md)
+* [SASS](appendix/sass.md)
 
 ## Hall of Fame
 * Pipe Sort

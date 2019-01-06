@@ -1,0 +1,11 @@
+.success-box, .error-box {
+  padding: 0.5em;
+}
+
+.success-box {
+  color: green;
+}
+
+.error-box {
+  color: red;
+}
