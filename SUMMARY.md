@@ -17,6 +17,7 @@
     * [Arrow Function](part1/ecma/arrow-function.md)
     * [Class](part1/ecma/class.md)
     * [Promise](part1/ecma/promise.md)
+    * [Async Await](part1/ecma/async-await.md)
 * [TypeScript Essence](part1/typescript.md)
     * [Types](part1/typescript/types.md)
     * [Interface](part1/typescript/interface.md)
@@ -51,18 +52,31 @@
 * [To Do List by Angular](part4/angular/to-do-list.md)
     * [by Vue.js](part4/vuejs/to-do-list.md)
     * [by React](part4/react/to-do-list.md)
+* [Angular with Spring Restful + JPA + MariaDB](part4/spring-restful.md)
 * [Logging to Server](part4/logging.md)
 * [Pagination](part4/pagination.md)
 
+## Part Ⅴ. Power of Angular
+* [Part Ⅴ. Power of Angular](part5/README.md)
+* [New Angular CLI](part5/new-angular-cli.md)
+* [Schematics](part5/schematics.md)
+* [Workspace](part5/workspace.md)
+* [Angular Console](part5/angular-console.md)
+* [Angular Universal](part5/angular-universal.md)
+* [Ionic](part5/ionic.md)
+
 ## Appendix
+* [Appendix](appendix/README.md)
 * [Bootstrap 4](appendix/angular-bootstrap.md)
+* [Bootstrap Template](appendix/bootstrap-template.md)
 * [Angular Material](appendix/angular-material.md)
 * [primeng](appendix/primeng.md)
 * [ng-bootstrap](appendix/ng-bootstrap.md)
 * [ngx-bootstrap](appendix/ngx-bootstrap.md)
 * [nebular](appendix/nebular.md)
+* [ngx-admin](appendix/ngx-admin.md)
 * [SASS](appendix/sass.md)
 
 ## Hall of Fame
-* [Pipe Sort](example/sort-pipe.md)
-
+* [Hall of Fame](hall/README.md)
+* [Pipe Sort](hall/sort-pipe.md)

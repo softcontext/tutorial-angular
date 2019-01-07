@@ -1,0 +1,32 @@
+<table class="table table-striped table-hover outline">
+  <colgroup>
+    <col style="width: 30%" />
+    <col style="width: 30%" />
+    <col style="width: 20%" />
+    <col style="width: 20%" />
+  </colgroup>
+  <thead class="thead-dark">
+    <tr>
+      <th *ngFor="let item of titles; let i=index" (click)="changeSortStandard(i)">
+        {{item.title}}
+        <ng-container *ngIf="this.col == i">
+          <i class="fas" [ngClass]="this.order == 1 ? 'fa-arrow-up' : 'fa-arrow-down'"></i>
+        </ng-container>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let company of companies | sort:path:order">
+      <td>{{ company.company }}</td>
+      <td>{{ company.domain }}</td>
+      <td>{{ company.info.country }}</td>
+      <td>{{ company.info.cash }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>path</h3>
+<pre>{{path | json}}</pre>
+
+<h3>order</h3>
+<pre>{{order | json}}</pre>

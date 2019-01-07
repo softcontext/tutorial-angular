@@ -1,0 +1,7 @@
+table.outline {
+  border: 1px solid silver;
+}
+
+table.outline thead.thead-dark {
+  border: 1px solid black;
+}
