@@ -80,7 +80,8 @@
 * [SASS](appendix/sass.md)
 
 ## Hall of Fame
-* Pipe Sort
+* [Hall of Fame](hall/README.md)
+* [Pipe Sort](hall/sort-pipe.md)
 
 작업 중 입니다. 위 목차를 눌러서 이용하세요.
 

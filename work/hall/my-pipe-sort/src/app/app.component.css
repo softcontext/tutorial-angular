@@ -2,3 +2,11 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+:host ::ng-deep table.outline {
+  border: 1px solid silver;
+}
+
+:host ::ng-deep table.outline thead.thead-dark {
+  border: 1px solid black;
+}

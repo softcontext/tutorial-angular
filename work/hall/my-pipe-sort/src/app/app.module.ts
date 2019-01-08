@@ -5,14 +5,19 @@ import { AppComponent } from './app.component';
 import { CompanyComponent } from './page/company/company.component';
 import { SortPipe } from './pipe/sort.pipe';
 
+import { ShareModule } from './share/share.module';
+import { MemoComponent } from './page/memo/memo.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     CompanyComponent,
-    SortPipe
+    SortPipe,
+    MemoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ShareModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

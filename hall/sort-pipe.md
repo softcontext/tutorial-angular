@@ -2,13 +2,15 @@
 
 주석으로 설명을 대신합니다. 코드를 흐름대로 따라가면서 살펴보시기 바랍니다.
 
-정렬 파이프 로직에 영감을 주었던 블로그 URL 주소를 잃어버렸습니다. 안타깝게 생각합니다. 일부분을 사용했을지라도 참조를 표시하고 싶었는데 열심히 검색해도 찾을 수가 없다니 구글님을 원망해야 할까요.
+# 예제 프로젝트
 
 ```bash
 $ ng new my-pipe-sort
 ? Would you like to add Angular routing? No
 ? Which stylesheet format would you like to use? SCSS
 ```
+
+## Sort Pipe
 
 ```bash
 $ cd my-pipe-sort
@@ -169,7 +171,7 @@ table.outline {
 }
 ```
 
-SASS 문법을 써보니 좋군요.
+SASS 문법을 써보니 보기에 좋군요.
 
 **company.component.html**
 
@@ -209,3 +211,15 @@ SASS 문법을 써보니 좋군요.
 ```
 
 `<ng-template>` 대신 `<ng-container>`를 사용하면 친숙한 문법으로 코드를 작성할 수 있어서 좋습니다.
+
+## 파이프의 재사용성 확보
+
+```bash
+$ ng g m share --module=app
+$ ng g p share/pipe/orderBy --module=share --export=true
+```
+
+```bash
+$ ng g c page/memo
+$ ng g class model/memo
+```

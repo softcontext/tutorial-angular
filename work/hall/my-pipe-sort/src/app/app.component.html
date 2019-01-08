@@ -1,3 +1,16 @@
 <div class="container">
-  <app-company></app-company>
+  <!-- <app-company></app-company> -->
+
+
+  <app-memo [data]="memos" [titles]="titles"></app-memo>
+
+  <!--
+    tr,td를 투영으로 전달하면 colgroup,col 설정이 적용되지 않는다.
+    타이틀 칼럼 클릭 시 파이프가 사용하는 값의 변경에 의한 리프레쉬가 수행되지 않는다.
+  <app-memo [data]="memos" [titles]="titles">
+    <tr *ngFor="let row of memos | orderBy:path:order">
+      <td>{{row.date | date:'yyy.MM.dd'}}</td>
+      <td>{{row.text | uppercase}}</td>
+    </tr>
+  </app-memo> -->
 </div>

@@ -135,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "my-pipe-sort"
+  "defaultProject": "my-pipe-sort",
+  "cli": {
+    "packageManager": "npm"
+  }
 }

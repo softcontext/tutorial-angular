@@ -49,7 +49,7 @@
 
 ## Part Ⅳ. Angular in Action
 * [Part Ⅳ. Angular in Action](part4/README.md)
-* [To Do List by Angular](part4/angular/to-do-list.md)
+* [To Do List by Angular then Chrome App](part4/angular/to-do-list.md)
     * [by Vue.js](part4/vuejs/to-do-list.md)
     * [by React](part4/react/to-do-list.md)
 * [Angular with Spring Restful + JPA + MariaDB](part4/spring-restful.md)
@@ -58,9 +58,9 @@
 
 ## Part Ⅴ. Power of Angular
 * [Part Ⅴ. Power of Angular](part5/README.md)
-* [New Angular CLI](part5/new-angular-cli.md)
 * [Schematics](part5/schematics.md)
 * [Workspace](part5/workspace.md)
+* [Library with New Angular CLI](part5/new-angular-cli.md)
 * [Angular Console](part5/angular-console.md)
 * [Angular Universal](part5/angular-universal.md)
 * [Ionic](part5/ionic.md)

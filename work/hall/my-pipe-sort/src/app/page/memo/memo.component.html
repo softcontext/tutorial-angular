@@ -1,0 +1,43 @@
+<table class="table table-striped table-hover outline">
+  <colgroup>
+    <col *ngFor="let title of titles" [style.width.%]="title.percent" />
+  </colgroup>
+  <thead class="thead-dark">
+    <tr>
+      <th *ngFor="let title of titles; let i=index" (click)="title.sortable && changeSortStandard(i)">
+        {{title.title}}
+        <ng-container *ngIf="title.sortable && this.col == i">
+          <i class="fas fa-sm" [ngClass]="this.order == 1 ? 'fa-arrow-up' : 'fa-arrow-down'"></i>
+        </ng-container>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of data | orderBy:path:order">
+      <!--
+      특정 속성이름이 노출되면 템플릿을 재활용할 수 없다.
+      <td>{{row.date | date:'yyy.MM.dd'}}</td>
+      <td>{{row.text}}</td> -->
+
+      <!--
+        속성이름도 사용자로부터 받아서 사용해야 템플릿을 재사용할 수 있게 된다.
+        {{row[title.path] | 'pipe string'}} 문자열 상태의 파이프 구문을 해석하지 못한다.
+        문자열 상태의 파이프 구문을 eval 할 수 있다면 문제는 쉽게 해결된다.
+        하지만 방법을 찾지 못했고 eval은 나쁜 것이 아니였던가... -->
+      <td *ngFor="let title of titles">
+          {{row[title.path]}}
+      </td>
+    </tr>
+
+    <!--
+      tr,td를 투영으로 가져오면 colgroup,col 설정이 적용되지 않는다.
+      타이틀 칼럼 클릭 시 파이프가 사용하는 값의 변경에 의한 리프레쉬가 수행되지 않는다. -->
+    <!-- <ng-content></ng-content> -->
+  </tbody>
+</table>
+
+<!-- <h3>path</h3>
+<pre>{{path | json}}</pre>
+
+<h3>order</h3>
+<pre>{{order | json}}</pre> -->
