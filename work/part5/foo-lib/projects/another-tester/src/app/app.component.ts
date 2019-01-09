@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FooLibService } from 'foo-lib';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +6,5 @@ import { FooLibService } from 'foo-lib';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'foo-tester';
-  desc;
-
-  constructor(private fooLibService: FooLibService) {
-    this.desc = this.fooLibService.getData();
-  }
+  title = 'another-tester';
 }

@@ -53,17 +53,14 @@
     * [by Vue.js](part4/vuejs/to-do-list.md)
     * [by React](part4/react/to-do-list.md)
 * [Angular with Spring Restful + JPA + MariaDB](part4/spring-restful.md)
-* [Logging to Server](part4/logging.md)
+* [Logging](part4/logging.md)
 * [Pagination](part4/pagination.md)
 
-## Part Ⅴ. Power of Angular
-* [Part Ⅴ. Power of Angular](part5/README.md)
-* [Schematics](part5/schematics.md)
+## Part Ⅴ. New Features of Angular
+* [Part Ⅴ. New Features of Angular](part5/README.md)
 * [Workspace](part5/workspace.md)
-* [Library with New Angular CLI](part5/new-angular-cli.md)
-* [Angular Console](part5/angular-console.md)
+* [Library: Angular CLI New Feature](part5/library.md)
 * [Angular Universal](part5/angular-universal.md)
-* [Ionic](part5/ionic.md)
 
 ## Appendix
 * [Appendix](appendix/README.md)
