@@ -52,6 +52,7 @@
 * [To Do List by Angular then Chrome App](part4/angular/to-do-list.md)
     * [by Vue.js](part4/vuejs/to-do-list.md)
     * [by React](part4/react/to-do-list.md)
+* [ngrx](part4/ngrx.md)
 * [Angular with Spring Restful + JPA + MariaDB](part4/spring-restful.md)
 * [Logging](part4/logging.md)
 * [Pagination](part4/pagination.md)
@@ -59,7 +60,7 @@
 ## Part Ⅴ. New Features of Angular
 * [Part Ⅴ. New Features of Angular](part5/README.md)
 * [Workspace](part5/workspace.md)
-* [Library: Angular CLI New Feature](part5/library.md)
+* [Library](part5/library.md)
 * [Angular Universal](part5/angular-universal.md)
 
 ## Appendix
@@ -73,6 +74,7 @@
 * [nebular](appendix/nebular.md)
 * [ngx-admin](appendix/ngx-admin.md)
 * [SASS](appendix/sass.md)
+* [RxJS](appendix/rxjs.md)
 
 ## Hall of Fame
 * [Hall of Fame](hall/README.md)

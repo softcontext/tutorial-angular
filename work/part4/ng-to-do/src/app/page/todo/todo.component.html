@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <app-todo-header></app-todo-header>
+  <app-todo-input (add)="addTodo($event)"></app-todo-input>
+  <app-todo-list [todos]="todos" (remove)="removeTodo($event)" (update)="updateTodo($event)"></app-todo-list>
+</div>
+
+<!-- XXX
+flag 값에 따라 자식 컴포넌트를 새로 만들면 부모의 데이터가 자식에게 항상 전달된다.
+<div *ngIf="flag">
+  <app-todo-list [todos]="todos" (remove)="removeTodo($event)" (update)="updateTodo($event)"></app-todo-list>
+</div>
+<div *ngIf="!flag">
+  <app-todo-list [todos]="todos" (remove)="removeTodo($event)" (update)="updateTodo($event)"></app-todo-list>
+</div> -->
+
+<!-- <hr>
+<h5>Parent</h5>
+<pre>{{todos | json}}</pre> -->

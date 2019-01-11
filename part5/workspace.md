@@ -149,7 +149,7 @@ Configuration options for each project in the workspace.
 
 **schematics (object)**  
 Workspace configuration options for Schematics.  
-스키마틱(처리 방식)은 작업 중에 적용하고 싶은 처리 방법과 관련한 정보를 설정합니다.
+스키마틱은 개발 중 구성요소를 다루는 방법을 사전에 간략하게 정의한 도식입니다. schematics 속성으로 구성요소의 처리 방식과 관련한 정보를 설정합니다. 구성요소별로 앵귤러가 미리 정의해 놓았습니다.
 
 * `schematic-package:schematic-name` (object): Object containing options for this schematic. JSON Schema for default schematics:
 

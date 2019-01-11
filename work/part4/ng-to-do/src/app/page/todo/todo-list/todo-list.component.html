@@ -1,0 +1,39 @@
+<section>
+  <table class="table table-striped table-hover">
+    <colgroup>
+      <col style="width: 5%">
+      <col style="width: 80%">
+      <col style="width: 15%">
+    </colgroup>
+    <tbody>
+      <tr *ngFor="let todo of todos; let i=index">
+        <td>{{i + 1}}</td>
+        <ng-container *ngIf="editTodoBackup && todo.id === editTodoBackup.id">
+          <td colspan="2">
+            <input class="form-control" type="text" name="" [(ngModel)]="todo.task">
+            <div class="text-center mt-2">
+              <button class="btn btn-secondary btn-sm px-3 mr-4" type="button" (click)="updateTodo(todo)">
+                <i class="fas fa-save"></i> Update
+              </button>
+              <button class="btn btn-secondary btn-sm px-3" type="button" (click)="updateCancel()">
+                <i class="fas fa-ban"></i> Cancel
+              </button>
+            </div>
+          </td>
+        </ng-container>
+        <ng-container *ngIf="todo.id !== editTodoBackup?.id">
+          <td (dblclick)="updateMode(todo.id)">{{todo.task}}</td>
+          <td class="right">
+            <button class="btn btn-outline-secondary btn-sm crush" type="button" (click)="removeTodo(todo.id)">
+              <i class="fas fa-times"></i>
+            </button>
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- <h5>Child</h5>
+<pre><strong>editTodoBackup: {{editTodoBackup | json}}</strong></pre>
+<pre>{{todos | json}}</pre> -->

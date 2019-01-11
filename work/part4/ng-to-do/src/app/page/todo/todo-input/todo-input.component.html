@@ -1,0 +1,15 @@
+<section>
+  <form>
+    <div class="input-group mb-2">
+      <input type="text" class="form-control" placeholder="Enter your task" name="task" [(ngModel)]="newTodo.task">
+      <span class="input-group-append">
+        <button class="btn btn-outline-secondary px-4" type="button" (click)="addTodo()">
+          <i class="fas fa-paper-plane"></i> Add
+        </button>
+      </span>
+    </div>
+  </form>
+</section>
+
+<!-- <h5>newTodo</h5>
+<pre>{{newTodo | json}}</pre> -->
