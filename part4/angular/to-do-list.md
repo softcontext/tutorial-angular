@@ -1,6 +1,6 @@
 # To Do List by Angular
 
-To Do 리스트는 새 기술을 익힐 때 처음으로 만들어 보는 대표적인 프로젝트입니다. 우리는 앵귤러로 To Do 리스트 프로젝트를 만들겠습니다. 이어서 경쟁기술인 뷰, 리액트로도 만들어 볼 예정입니다. 이를 통해서 앵귤러의 작동 방식을 더 깊게 이해할 수 있고 경쟁기술과의 비교를 통해서 장,단점을 파악할 수 있기를 기대합니다.
+To Do 리스트는 새 기술을 익힐 때 처음으로 만들어 보는 대표적인 프로젝트입니다. 우리는 앵귤러로 To Do 리스트 프로젝트를 만들겠습니다. 이어서 경쟁기술인 뷰, 리액트로도 만들어 볼 예정입니다. 이를 통해서 앵귤러의 작동 방식을 더 깊게 이해할 수 있고 경쟁기술과의 비교를 통해서 장,단점을 파악할 수 있을거라고 생각합니다.
 
 ## 프로젝트 생성
 
@@ -30,7 +30,9 @@ $ ng new ng-to-do
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <link rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+  integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+  crossorigin="anonymous">
   <link rel="stylesheet"
   href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
   integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -57,7 +59,7 @@ $ ng new ng-to-do
 
 ## 화면 디자인
 
-사용할 화면을 디자인합니다. 이 작업은 앵귤러와 아무런 상관이 없습니다. index.html에서 직접 작업해도 됩니다.
+사용할 화면을 디자인합니다. 이 작업은 앵귤러와 아무런 상관이 없습니다. index.html에서 직접 작업해도 됩니다. 나중에 컴포넌트가 생성되면 잘라서 옮기면 되겠습니다.
 
 ```html
 <section>
@@ -170,7 +172,7 @@ export class Todo {
 }
 ```
 
-id 값은 `"시각 값 + 난수 값"`으로 처리합니다. 편의를 위해서 파라미터를 받지 않는 생성자와 파라미터 1개를 받는 생성자를 만듭니다. 생성자가 1개 뿐인데 무슨 소리냐구요? JS는 오버로딩 개념이 없습니다. 하나의 함수가 파라미터를 다양하게 받을 수 있습니다. 그렇기 때문에 우리가 만든 하나의 생성자는 파라미터를 받지 않아도 되고 파라미터를 1개 받아도 되는 생성자입니다.
+id 값은 `"시각 값 + 난수 값"`으로 처리합니다. 편의를 위해서 파라미터를 받지 않는 생성자와 파라미터 1개를 받는 생성자를 만듭니다. 생성자가 1개 뿐인데 무슨 소리냐구요? JS는 오버로딩 개념이 없습니다. 하나의 함수가 파라미터를 다양하게 받을 수 있습니다. 그렇기 때문에 우리가 만든 하나의 생성자는 파라미터를 받지 않아도 되고 파라미터를 1개 받아도 되는 생성자의 역할을 모두 수행합니다.
 
 **src\app\page\todo\todo.component.ts**
 
@@ -394,7 +396,7 @@ export class TodoListComponent implements OnInit, OnChanges {
 주석이 정말 길죠; 여러분을 위한 사랑이라고 생각해 주시면 좋겠습니다. :)
 
 **`changeDetection: ChangeDetectionStrategy.Default`**  
-`ChangeDetectionStrategy.OnPush` 설정을 하게되면 최초에 한 번만 부모가 이 컴포넌트에게 데이터를 전달합니다. 예를 들어서, TodoInputComponent 컴포넌트가 부모에게 새 데이터를 `emit()` 함수로 전달해서 부모의 상태가 변경되어도 이를 TodoListComponent 컴포넌트는 더 이상 받지 못하게 됩니다. `ChangeDetectionStrategy.Default`가 기본값으로 명시적 설정을 생략하면 이 방식을 사용하는 것입니다. 초기에 데이터를 받아서 계속 같은 데이터를 표시하는 컴포넌트라면 `ChangeDetectionStrategy.OnPush` 설정을 해서 성능의 향상을 기대할 수 있습니다.
+`ChangeDetectionStrategy.OnPush` 설정을 하게되면 최초에 한 번만 부모가 이 컴포넌트에게 데이터를 전달합니다. 예를 들어서, TodoInputComponent 컴포넌트가 부모에게 새 데이터를 `emit()` 함수로 전달해서 부모의 상태가 변경되어도 이를 TodoListComponent 컴포넌트는 더 이상 받지 못하게 됩니다. `ChangeDetectionStrategy.Default`가 기본값으로 명시적 설정을 생략하면 이 방식을 사용하는 것이 됩니다. 초기에 데이터를 받아서 계속 같은 데이터를 표시하는 컴포넌트라면 `ChangeDetectionStrategy.OnPush` 설정을 해서 성능의 향상을 기대할 수 있습니다.
 
 **`@Input('todos') todos: Todo[];`**  
 부모 컴포넌트가 `<app-todo-list [todos]="todos"></app-todo-list>` 프로퍼티 바인딩으로 건네주는 데이터를 자식 컴포넌트로써 받기 위한 설정입니다. 경쟁기술인 리액트, 뷰는 이 부분을 자동화해서 개발자가 따로 선언하지 않아도 받아주는 객체가 존재하여 편리합니다. 앵귤러도 이 부분은 개선되지 않을까 하는 기대를 하게 되는 이유입니다. 변수명이 전달하는 키 값과 같다면 `@Input` 데코레이터에게 전달하는 문자열은 생략할 수 있습니다.
@@ -404,7 +406,7 @@ export class TodoListComponent implements OnInit, OnChanges {
 
 **`editTodoBackup: Todo = null;`**  
 데이터를 표시하는 출력모드와 데이터를 변경할 수 있도록 수정폼을 제공하는 수정모드를 구분하는 변수입니다. null 값을 갖고 있으면 출력모드이고
-객체를 갖고 있으면 해당 객체의 데이터를 사용하는 테이블 로우는 수정모드가 됩니다.
+객체를 갖고 있으면 해당 객체의 데이터를 사용하는 테이블 로우는 수정모드가 됩니다. 더불어서 수정작업을 취소할 때, 수정작업 시 변환 된 부분을 버리고 원래의 데이터로 복원하기 위한 해당 로우가 사용한 정보를 백업하기 위한 변수이기도 합니다.
 
 **src\app\page\todo\todo-list\todo-list.component.scss**
 
@@ -491,7 +493,7 @@ fontawesome 아이콘을 사용합니다. 보기 좋은 떡이 먹기도 좋습�
 
 정리해 보죠. 한 개의 자식 컴포넌트만이 데이터를 가공한다면 자식 컴포넌트가 직접 데이터를 가공해도 괜찮다고 볼 수 있습니다. 복수의 컴포넌트가 데이터를 가공하는 것은 데이터 가공과 관련한 로직의 중복을 의미합니다. 그러므로 이럴 때는 부모만이 데이터를 가공하고 자식들은 부모에게 요청하여 데이터를 가공하도록 연동하는 것이 좋겠습니다. 그에 더해서 자식 컴포넌트가 부모에게 받은 데이터를 직접 건드리지 않는 것이 유지보수 과정에서 발생할 수 있는 버그를 예방하는 조치가 되겠습니다.
 
-자식 컴포넌트가 부모에게 받은 데이터를 직접 건드리지 않도록 만들고 싶다면 받은 원본 데이터를 사용하면 안 됩니다. 복사본을 만들어서 사용하다가 부모에게 이벤트를 전송하여 부모의 데이터를 갱시하도록 하는 편이 더 좋습니다. 이러한 생각을 정리하다보면 리액트가 주창하는 단 방향 데이터 흐름과 일맥상통하게 됩니다. 요는 어는 것이 좋다라고 단정하는 것이 아니라 컴포넌트가 데이터를 취급하는 복잡도에 따라서 양방향 바인딩의 초기 편리함을 버리고 관리성을 극대화하기 위해서 단방향 바인딩으로 전환할 필요도 있다 하겠습니다. 규모가 큰 프로젝트에서 수 많은 개발자가 협업을 하는 경우에는 적용해 볼만 하다고 생각됩니다.
+자식 컴포넌트가 부모에게 받은 데이터를 직접 건드리지 않도록 만들고 싶다면 받은 원본 데이터를 사용하면 안 됩니다. 복사본을 만들어서 사용하다가 부모에게 이벤트를 전송하여 부모의 데이터를 갱신하도록 하는 편이 더 좋습니다. 이러한 생각을 정리하다보면 리액트가 주창하는 단 방향 데이터 흐름과 일맥상통하게 됩니다. 요는 어는 것이 좋다라고 단정하는 것이 아니라 컴포넌트가 데이터를 취급하는 복잡도에 따라서 양방향 바인딩의 초기 편리함을 버리고 관리성을 극대화하기 위해서 단방향 바인딩으로 전환할 필요도 있다 하겠습니다. 규모가 큰 프로젝트에서 수 많은 개발자가 협업을 하는 경우에는 적용해 볼만 하다고 생각됩니다.
 
 **`<td (dblclick)="updateMode(todo.id)">{{todo.task}}</td>`**  
 위 설정으로 해당 셀을 더블클릭하면 출력모드가 수정모드로 변경됩니다.
@@ -563,10 +565,130 @@ export class TodoInputComponent implements OnInit {
 
 화면을 확인합니다.
 
-<img src="../../image/ng-to-do/list.png" width="80%"/>
+<img src="../../image/ng-to-do/list.png" width="70%"/>
 
 출력화면입니다.
 
-<img src="../../image/ng-to-do/edit.png" width="80%"/>
+<img src="../../image/ng-to-do/edit.png" width="70%"/>
 
 로우의 문자열 부분을 더블클릭하면 수정모드 화면으로 전환됩니다.
+
+
+
+# Angular Application to Chrome Extension
+
+다음 사이트를 참고하였습니다.  
+* https://developer.chrome.com/apps/about_apps
+* https://medium.com/@PardeepJain/build-your-own-chrome-extension-using-angular-4-ecedbd7404cc
+
+Chrome App은 HTML, CSS 및 Javascript를 사용하여 제작된 자바스크립트 애플리케이션입니다.
+
+## CSP 정책을 위한 변경작업
+
+Content Security Policy 정책에 따라 CDN 방식을 이용할 수 없습니다. 자세한 내용은 다음 사이트를 참고하세요.  
+* https://developer.chrome.com/extensions/contentSecurityPolicy
+* https://developers.google.com/web/fundamentals/security/csp/?hl=ko
+
+```bash
+$ npm i jquery popper.js bootstrap
+$ npm i font-awesome
+```
+
+버전을 명시하지 않으면 이용 가능한 최신 버전을 설치합니다. font-awesome은 4.7.0 버전이 설치됩니다. 5.6.3 버전은 아직 NPM으로 설치할 수 없습니다. 그렇기 때문에 기존 아이콘 코드를 다운그레이드해야 합니다. todo-input.component.html, todo-list.component.html 파일에서 fas를 fa로 변경합니다.
+
+**angular.json**
+
+```json
+"styles": [
+  "./node_modules/font-awesome/css/font-awesome.css",
+  "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "src/styles.scss"
+],
+"scripts": [
+  "./node_modules/jquery/dist/jquery.slim.min.js",
+  "./node_modules/popper.js/dist/umd/popper.min.js",
+  "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+]
+```
+
+**index.html**
+
+CDN 관련코드를 모두 제거합니다.
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NgToDo</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+```
+
+테스트 서버를 재 시작하고 결과를 확인합니다. 스타일이 유지되어야 하고 아이콘이 모두 잘 표시되어야 합니다.
+
+## 화면 사이즈
+
+추가적인 작업으로 화면 가로 길이의 최소사이즈를 설정합니다. min-width 설정을 주지 않으면 화면의 폭이 너무 작게 됩니다. Chrome Extension의 기본 값이 적용되기 때문이라 여겨집니다.
+
+**styles.scss**
+
+```scss
+body,
+html {
+  height: 100%;
+  min-width: 30rem;
+}
+```
+
+## 등록작업
+
+**manifest.json**
+
+```json
+{
+  "name": "Todo App",
+  "description": "Todo app as chrome extension using angular",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "index.html"
+  },
+  "permissions": [],
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "web_accessible_resources": [
+    "assets/img/*",
+    "assets/fonts/*"
+  ]
+}
+```
+
+**icon.png**
+
+브라우저 우 상단에 표시될 아이콘이 하나 필요합니다. 
+
+### 등록순서
+
+요리에 필요한 모든 재료가 준비되었으니 본격적으로 Chrome Extension으로 우리가 만든 앵귤러 프로그램을 등록해 보겠습니다.
+
+1. manifest.json, icon.png 파일을 assets 폴더에 배치합니다. 나중에 유지보수를 고려한다면 이러한 파일들도 백업대상이어야 합니다. 간단하게 assets 폴더에 배치하는 것이 좋겠습니다. assets 폴더 밑에 파일들은 빌드 시 dist 폴덤 밑으로 복사되기 때문입니다.
+
+2. `ng build --prod` 명령으로 앵귤러 애플리케이션을 빌드합니다.
+
+3. dist/ng-to-do/assets 폴더 밑에 있는 manifest.json, icon.png 파일을 dist/ng-to-do/ 폴더 밑으로 옮깁니다. 이 두 파일은 원래 루트에 배치해야 하는 파일입니다.
+
+4. 크롬 브라우저 &rArr; More 아이콘 &rArr; `도구 더보기` &rArr; `확장 프로그램` &rArr; `압축해제된 확장 프로그램을 로드합니다` 순서로 메뉴를 이동합니다. 그런 다음 `ng-to-do\dist\ng-to-do` 폴더를 선택하고 `확인` 버튼을 클릭합니다.
+
+5. 우 상단에 아이콘이 추가되어 있는지 보시고 클릭합니다.
+
+<img src="../../image/ng-to-do/chrome-extension.png" width="90%"/>
+
+우리가 만든 프로그램을 우리가 직접 사용하는 즐거움이 있습니다. 마치 텃밭에서 직접 기른 배추로 배추찜을 해 먹는 기분입니다.
