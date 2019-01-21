@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">ZIP</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Enter Zip Code" #input>
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary text-uppercase" type="button" #button>
+        <i class="fa fa-plus"></i> Add Location
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let temperature of temperatures">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <h5 class="card-title col-md-4">{{temperature.zip}}</h5>
+            <h5 class="card-title col-md-8">{{temperature.name}}</h5>
+          </div>
+          <h6 class="card-subtitle mb-2 text-muted">
+            {{temperature.main.temp}}&deg;F, {{temperature.main.humidity}}%</h6>
+          <p class="card-text">{{temperature.weather[0].description}}</p>
+          <footer class="blockquote-footer">
+            by <cite title="Source Title">http://api.openweathermap.org</cite>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

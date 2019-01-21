@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <a class="navbar-brand" routerLink="/">Angular RxJS</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/home">
+          Home <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/example">Example</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/sample">Sample</a>
+      </li>
+      <li class="nav-item dropdown" routerLinkActive="active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Test
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="'test'" routerLinkActive="active">Test</a>
+          <a class="dropdown-item" [routerLink]="'test2'" routerLinkActive="active">Test 2</a>
+          <a class="dropdown-item" [routerLink]="'test3'" routerLinkActive="active">Test 3</a>
+          <a class="dropdown-item" [routerLink]="'test4'" routerLinkActive="active">Test 4</a>
+          <a class="dropdown-item" [routerLink]="'test5'" routerLinkActive="active">Test 5</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="'#'" routerLinkActive="active">Action</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</nav>

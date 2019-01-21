@@ -49,7 +49,7 @@
 
 ## Part Ⅳ. Angular in Action
 * [Part Ⅳ. Angular in Action](part4/README.md)
-* [To Do List by Angular then Chrome App](part4/angular/to-do-list.md)
+* [To Do List by Angular then Chrome Extension](part4/angular/to-do-list.md)
     * [by Vue.js](part4/vuejs/to-do-list.md)
     * [by React](part4/react/to-do-list.md)
 * [ngrx](part4/ngrx.md)

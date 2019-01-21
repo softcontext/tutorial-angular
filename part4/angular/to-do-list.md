@@ -689,6 +689,15 @@ html {
 
 5. 우 상단에 아이콘이 추가되어 있는지 보시고 클릭합니다.
 
-<img src="../../image/ng-to-do/chrome-extension.png" width="90%"/>
+<img src="../../image/ng-to-do/chrome-extension.png" width="80%"/>
 
-우리가 만든 프로그램을 우리가 직접 사용하는 즐거움이 있습니다. 마치 텃밭에서 직접 기른 배추로 배추찜을 해 먹는 기분입니다.
+dist 폴더밑에 프로젝트가 삭제되면 서비스되지 못합니다. 그것이 싫다면  웹스토어에 올리면 되는데 크롬 웹스토어 올리기 위해서는 비용을 지불해야 합니다. 계정을 확인하고 프로그램을 게시하기 위해 일회성 개발자 등록 수수료 US$5.00가 필요합니다. 소개 이미지도 필수적으로 준비해야 합니다.
+
+* 스크린샷 이미지 - 1280x800 
+* 작은 타일 - 440x280
+
+자세한 내용은 다음 사이트의 안내를 참고하세요.  
+https://chrome.google.com/webstore/developer/dashboard?hl=ko
+
+다음은 예제 사이트입니다.  
+* https://developer.chrome.com/extensions/samples
