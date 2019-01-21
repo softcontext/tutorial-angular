@@ -20,7 +20,6 @@
 * `Angular`: ~7.1.0
 * `typescript`: 3.1.6
 
-맥 없습니다. 쿨럭;
 
 # Table of Contents
 
@@ -73,34 +72,37 @@
 
 ## Part Ⅳ. Angular in Action
 * [Part Ⅳ. Angular in Action](part4/README.md)
-* [To Do List by Angular then Chrome Extension](part4/angular/to-do-list.md)
-    * [by Vue.js](part4/vuejs/to-do-list.md)
-    * [by React](part4/react/to-do-list.md)
-* [Angular with Spring Restful + JPA + MariaDB](part4/spring-restful.md)
-* [Logging](part4/logging.md)
-* [Pagination](part4/pagination.md)
+* [RxJS](part4/rxjs.md)
+* [To Do List by Angular as Chrome Extension](part4/angular/to-do-list.md)
+    * [by Vue.js]
+    * [by React]
+* [ngrx]
+* [Angular with Spring Restful + JPA + MariaDB]
+* [Logging]
+* [Pagination]
 
 ## Part Ⅴ. New Features of Angular
 * [Part Ⅴ. New Features of Angular](part5/README.md)
 * [Workspace](part5/workspace.md)
 * [Library](part5/library.md)
-* [Angular Universal](part5/angular-universal.md)
+* [Angular Universal]
 
 ## Appendix
 * [Appendix](appendix/README.md)
 * [Bootstrap 4](appendix/angular-bootstrap.md)
-* [Bootstrap Template](appendix/bootstrap-template.md)
+* [Bootstrap Template]
 * [Angular Material](appendix/angular-material.md)
 * [primeng](appendix/primeng.md)
 * [ng-bootstrap](appendix/ng-bootstrap.md)
 * [ngx-bootstrap](appendix/ngx-bootstrap.md)
 * [nebular](appendix/nebular.md)
-* [ngx-admin](appendix/ngx-admin.md)
+* [ngx-admin]
 * [SASS](appendix/sass.md)
 
 ## Hall of Fame
 * [Hall of Fame](hall/README.md)
 * [Pipe Sort](hall/sort-pipe.md)
+
 
 작업 중 입니다. 
 

@@ -49,7 +49,8 @@
 
 ## Part Ⅳ. Angular in Action
 * [Part Ⅳ. Angular in Action](part4/README.md)
-* [To Do List by Angular then Chrome Extension](part4/angular/to-do-list.md)
+* [RxJS](part4/rxjs.md)
+* [To Do List by Angular as Chrome Extension](part4/angular/to-do-list.md)
     * [by Vue.js](part4/vuejs/to-do-list.md)
     * [by React](part4/react/to-do-list.md)
 * [ngrx](part4/ngrx.md)
@@ -74,7 +75,6 @@
 * [nebular](appendix/nebular.md)
 * [ngx-admin](appendix/ngx-admin.md)
 * [SASS](appendix/sass.md)
-* [RxJS](appendix/rxjs.md)
 
 ## Hall of Fame
 * [Hall of Fame](hall/README.md)
