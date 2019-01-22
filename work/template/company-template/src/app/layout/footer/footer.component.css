@@ -1,0 +1,112 @@
+.footer-title {
+  color: #FFF;
+}
+
+footer {
+  margin-top: 8em;
+  width: 100%;
+  background-color: #263238;
+  min-height: 250px;
+  padding: 10px 0 25px;
+}
+
+.pt2 {
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
+
+footer p {
+  font-size: 13px;
+  color: #CCC;
+  padding-bottom: 0;
+  margin-bottom: 8px;
+}
+
+.pb20 {
+  padding-bottom: 20px;
+}
+
+.footer_ul_amrc {
+  margin: 0;
+  list-style-type: none;
+  font-size: 14px;
+  padding: 0 0 10px;
+}
+
+.footer_ul_amrc li {
+  padding: 0 0 5px;
+}
+
+.footer_ul_amrc li a {
+  color: #CCC;
+}
+
+.footer_ul_amrc li a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.padding-right {
+  padding-right: 10px;
+}
+
+.footer-link {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-link li a:hover {
+  text-decoration: none;
+}
+
+.footer-link li i {
+  margin-top: 5px;
+}
+
+.bottom_border {
+  border-bottom: 1px solid #323f45;
+  padding-bottom: 1em;
+}
+
+.footer-social ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.footer-social li {
+  float: right;
+}
+
+.footer-social li a {
+  display: block;
+  color: #CCC;
+  padding-right: 2em;
+  text-decoration: none;
+}
+
+.footer-social li a:hover {
+  color: #111;
+}
+
+a:link {
+  color: #FFF;
+}
+
+a:visited {
+  color: #CCC;
+}
+
+a:hover {
+  color: #FFF;
+}
+
+a:active {
+  color: #FFF;
+}
+
+a {
+  font-size: 13px;
+}

@@ -20,8 +20,9 @@ export class NavbarComponent implements OnInit {
         var x = $("#" + $(this).data('value'));
 
         if (x.length) {
+          console.log($("#" + $(this).data('value')).offset().top)
           $("body, html").animate({
-            scrollTop: $("#" + $(this).data('value')).offset().top
+            scrollTop: $("#" + $(this).data('value')).offset().top - 70
           }, 1000)
         }
       })

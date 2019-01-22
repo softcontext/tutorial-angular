@@ -103,6 +103,7 @@
 .content-half .btn {
   margin-top: 20px;
 }
+
 /*--- three Block Panel ---*/
 .three-panel-block {
   float: left;
@@ -121,6 +122,7 @@
   padding: 16px;
   border-radius: 50%;
 }
+
 /*--- Two Block Panel ---*/
 .two-panel-block {
   float: left;
@@ -130,6 +132,7 @@
 .two-panel-block p {
   font-size: 16px;
 }
+
 /*--- Two Block Panel ---*/
 .four-panel-block {
   float: left;

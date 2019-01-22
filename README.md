@@ -90,7 +90,7 @@
 ## Appendix
 * [Appendix](appendix/README.md)
 * [Bootstrap 4](appendix/angular-bootstrap.md)
-* [Bootstrap Template]
+* [Bootstrap Template](appendix/bootstrap-template.md)
 * [Angular Material](appendix/angular-material.md)
 * [primeng](appendix/primeng.md)
 * [ng-bootstrap](appendix/ng-bootstrap.md)

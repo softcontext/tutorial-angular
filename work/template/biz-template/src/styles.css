@@ -1,8 +1,7 @@
 /*Google Fonts*/
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700');
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-
 body,
 html {
   height: 100%;
@@ -13,6 +12,7 @@ body {
   font-size: 1rem;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
 /* ========== Universal Stylings ========== */
 h1,
 h2,
@@ -29,7 +29,7 @@ h6 {
 }
 
 .bg-primary {
-  background-color: #35CBDF!important;
+  background-color: #35CBDF !important;
 }
 
 .text-inverse {
@@ -37,7 +37,7 @@ h6 {
 }
 
 .text-primary {
-  color: #35CBDF!important;
+  color: #35CBDF !important;
 }
 
 .btn {
@@ -49,7 +49,7 @@ h6 {
 .btn-primary {
   background-color: #35CBDF;
   border-color: #35CBDF;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .btn-primary:focus,
@@ -83,7 +83,6 @@ i.box-circle-solid {
   text-align: center;
   width: 55px;
 }
-// info-card, info-member
 
 .text-underline-white:before {
   content: "";
@@ -130,11 +129,10 @@ i.box-circle-solid {
   bottom: -15px;
   border-radius: 10px;
 }
-// carousel
 
 .bg-overlay:before {
   content: "";
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -145,7 +143,7 @@ i.box-circle-solid {
 
 .bg-overlay-light:before {
   content: "";
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -153,60 +151,6 @@ i.box-circle-solid {
   top: 0;
   z-index: -1;
 }
-// .parallax {
-//   background-attachment: fixed!important;
-// }
+
 /* ========== Loader ========== */
-// .loaders {
-//   width: 100%;
-//   box-sizing: border-box;
-//   display: flex;
-//   flex: 0 1 auto;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-// }
-//
-// .loaders .loader {
-//   box-sizing: border-box;
-//   display: flex;
-//   flex: 0 1 auto;
-//   flex-direction: column;
-//   flex-grow: 1;
-//   flex-shrink: 0;
-//   flex-basis: 25%;
-//   max-width: 25%;
-//   height: 200px;
-//   align-items: center;
-//   justify-content: center;
-// }
-//
-// .loader {
-//   display: table;
-//   height: 100%;
-//   position: fixed;
-//   width: 100%;
-//   z-index: 1200;
-// }
-//
-// .loader-bg {
-//   background: #35CBDF;
-// }
-//
-// .loader-inner {
-//   display: table-cell;
-//   text-align: center;
-//   vertical-align: middle;
-// }
-//
-// .loader .ball-clip-rotate-pulse {
-//   left: 50%;
-//   position: absolute;
-//   top: 50%;
-// }
 /* ========== Who We Are ========== */
-// .widget {
-//   float: left;
-//   width: 100%;
-//   position: relative;
-//   z-index: 1;
-// }
