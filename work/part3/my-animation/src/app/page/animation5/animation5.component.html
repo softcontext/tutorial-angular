@@ -1,0 +1,10 @@
+<div class="my-2">
+  <app-slide-panel [activePane]="isLeftVisible ? 'left' : 'right'">
+    <div leftPane>LEFT</div>
+    <div rightPane>RIGHT</div>
+  </app-slide-panel>
+</div>
+
+<button class="btn btn-info" (click)="isLeftVisible = !isLeftVisible">
+  {{isLeftVisible ? 'Show Right' : 'Show Left'}}
+</button>

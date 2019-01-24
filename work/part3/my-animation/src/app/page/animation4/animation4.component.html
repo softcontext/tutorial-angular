@@ -1,0 +1,36 @@
+<div class="mx-2 my-2">
+  <div class="mb-4">
+    <button class="btn btn-primary mr-1" (click)="addItem()">Add Item</button>
+    <button class="btn btn-warning" (click)="removeItem()">Remove Item</button>
+  </div>
+
+  <hr>
+
+  <div class="mb-4">
+    <ul>
+      <li *ngFor="let item of list" [@fadeInOut]>
+        {{item}}
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="mb-4">
+    <ul class="text-center">
+      <li *ngFor="let item of list" [@flyInOut]>
+        {{item}}
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="mb-4">
+    <ul class="text-center">
+      <li *ngFor="let item of list" [@enterLeave]>
+        {{item}}
+      </li>
+    </ul>
+  </div>
+</div>

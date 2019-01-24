@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/*
+[ngStyle]="{listStyle: 'none', paddingLeft: '0'}
+설정이 제대로 적용되지 않는다.
+ */
+ul {
+  list-style: none;
+  padding-left: 1em;
+}

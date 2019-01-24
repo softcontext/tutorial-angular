@@ -1,0 +1,8 @@
+<div [innerHtml]="html"></div>
+
+<!-- 인터폴레이션 식은 ``, \" 등에 코드를 파싱하지 못한다. -->
+<div [innerHtml]="'<h1>Sanitization</h1><script>console.log(1)</script>' | sanitizeHtml"></div>
+
+<iframe [src]="src" width="560" height="315"></iframe>
+
+<iframe [src]="'http://yourheartbadge.co.kr/' | sanitizeResourceUrl" width="560" height="315"></iframe>

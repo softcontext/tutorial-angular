@@ -1,0 +1,6 @@
+<div class="mx-2 my-2">
+  <button class="btn btn-primary mb-2" [ngStyle]="{width:'100px'}" (click)="isInitial=!isInitial">
+    {{ isInitial ? 'Expand' : 'Shrink' }}
+  </button>
+  <div [@changeDivSize]="isInitial ? 'initial' : 'final'"></div>
+</div>

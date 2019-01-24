@@ -1,0 +1,9 @@
+[leftPane] {
+  background-color: gold;
+  height: 300px;
+}
+
+[rightPane] {
+  background-color: tomato;
+  height: 300px;
+}
