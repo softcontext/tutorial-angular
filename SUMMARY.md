@@ -54,9 +54,9 @@
     * [by Vue.js](part4/vuejs/to-do-list.md)
     * [by React](part4/react/to-do-list.md)
 * [ngrx](part4/ngrx.md)
-* [Angular with Spring Restful + JPA + MariaDB](part4/spring-restful.md)
+* [Angular Pagination with Node + Express + sequelize](part4/node.md)
+* [Angular with Spring + JPA](part4/spring-restful.md)
 * [Logging](part4/logging.md)
-* [Pagination](part4/pagination.md)
 
 ## Part Ⅴ. New Features of Angular
 * [Part Ⅴ. New Features of Angular](part5/README.md)
@@ -79,3 +79,4 @@
 ## Hall of Fame
 * [Hall of Fame](hall/README.md)
 * [Pipe Sort](hall/sort-pipe.md)
+

@@ -19,7 +19,7 @@
 * `Angular CLI`: 7.1.1
 * `Angular`: ~7.1.0
 * `typescript`: 3.1.6
-
+* `IDE`: Atom
 
 # Table of Contents
 
@@ -77,9 +77,9 @@
     * [by Vue.js]
     * [by React]
 * [ngrx]
+* [Angular Pagination with Node + Express + sequelize](part4/node.md)
 * [Angular with Spring Restful + JPA + MariaDB]
 * [Logging]
-* [Pagination]
 
 ## Part Ⅴ. New Features of Angular
 * [Part Ⅴ. New Features of Angular](part5/README.md)
