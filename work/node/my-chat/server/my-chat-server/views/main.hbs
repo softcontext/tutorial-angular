@@ -1,0 +1,88 @@
+<!-- <h3>채팅룸</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Capacity</th>
+      <th>Owner</th>
+      <th>Control</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rooms}}
+      <tr data-id="{{_id}}">
+        <td>{{title}}</td>
+        <td>{{password ? 'Secret' : 'Public'}}</td>
+        <td>{{max}}</td>
+        <td style="color: {{owner}}">{{owner}}</td>
+        <td>
+          <button type="button" data-password="{{password ? 'true' : 'false'}}" data-id="{{_id}}" class="join-btn">Enter</button>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<a href="/room">Create a room</a>
+
+<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script type="text/javascript">
+  let socket = io.connect('http://localhost:3000/room', {
+    path: '/socket.io'
+  });
+
+  let addBtnEvent = (e) => {
+    if (e.target.dataset.password === 'true') {
+      const password = prompt('비밀번호를 입력하세요');
+      location.href = '/room/' + e.target.dataset.id + '?password=' + password;
+    } else {
+      location.href = '/room/' + e.target.dataset.id;
+    }
+  };
+
+  socket.on('newRoom', (data) => {
+    let tr = document.createElement('tr');
+    let td = document.createElement('td');
+    td.textContent = data.title;
+    tr.appendChild(td);
+
+    td = document.createElement('td');
+    td.textContent = data.password ? 'Secret' : 'Public';
+    tr.appendChild(td);
+
+    td = document.createElement('td');
+    td.textContent = data.max;
+    tr.appendChild(td);
+
+    td = document.createElement('td');
+    td.style.color = data.owner;
+    td.textContent = data.owner;
+    tr.appendChild(td);
+
+    td = document.createElement('td');
+    let button = document.createElement('button');
+    button.textContent = 'Enter';
+    button.dataset.password = data.password ? 'true' : 'false';
+    button.dataset.id = data._id;
+    button.addEventListener('click', addBtnEvent);
+    td.appendChild(button);
+    tr.appendChild(td);
+    tr.dataset.id = data._id;
+
+    document.querySelector('table tbody').appendChild(tr);
+  });
+
+  socket.on('removeRoom', (data) => {
+    Array.prototype.forEach.call(document.querySelectorAll('tbody tr'), (tr) => {
+      if (tr.dataset.id === data) {
+        tr.parentNode.removeChild(tr);
+      }
+    })
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.join-btn'), (btn) => {
+    btn.addEventListener('click', addBtnEvent);
+  })
+</script> -->

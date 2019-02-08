@@ -46,6 +46,8 @@
 * [Form Control](part3/form-control.md)
 * [CSS in Angular](part3/css-in-angular.md)
 * [Transclusion](part3/transclusion.md)
+* [Sanitization](part3/sanitization.md)
+* [Animation](part3/animation.md)
 
 ## Part Ⅳ. Angular in Action
 * [Part Ⅳ. Angular in Action](part4/README.md)
@@ -55,6 +57,7 @@
     * [by React](part4/react/to-do-list.md)
 * [ngrx](part4/ngrx.md)
 * [Angular Pagination with Node + Express + sequelize](part4/node.md)
+* [Angular with Node + Express + JWT](part4/jwt.md)
 * [Angular with Spring + JPA](part4/spring-restful.md)
 * [Logging](part4/logging.md)
 

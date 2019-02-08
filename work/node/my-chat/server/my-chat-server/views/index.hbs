@@ -1,0 +1,31 @@
+<h3>{{title}}</h3>
+
+<script type="text/javascript">
+  // let webSocket = new WebSocket("ws://localhost:3000");
+  //
+  // webSocket.onopen = () => {
+  //   console.log('서버와 웹 소켓 연결 성공!');
+  // };
+  //
+  // webSocket.onmessage = (event) => {
+  //   // 서버가 보낸 메시지를 출력합니다.
+  //   console.log(event.data);
+  //
+  //   webSocket.send('클라이언트에서 서버로 답장을 보냅니다.');
+  // };
+</script>
+
+<!-- /socket.io/socket.io.js는 socket.io가 제공한다. -->
+<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script type="text/javascript">
+  let socket = io.connect('http://localhost:3000', {
+    // 서버의 path 옵션과 일치시켜 통신한다.
+    path: '/socket.io'
+  });
+
+  socket.on('news', (data) => {
+    console.log(data);
+
+    socket.emit('reply', 'Hello Node.JS');
+  });
+</script>

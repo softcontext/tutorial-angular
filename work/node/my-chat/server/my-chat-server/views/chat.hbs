@@ -1,0 +1,45 @@
+<!-- <h3>{{title}}</h3>
+<a href="/">Leave</a>
+{{#each chats}}
+  {{#if this.user === user}}
+    <div class="mine" style="color: {{user}}">
+
+    </div>
+  {{else}}
+
+  {{/if}}
+{{/each}}
+
+<form class="" action="/chat" method="post" id="chat-form" enctype="multipart/form-data">
+  <label for="gif">GIF 올리기</label>
+  <input type="text" name="gif" value="" id="gif" accept="image/gif">
+  <input type="text" name="chat" value="" id="chat">
+  <button type="submit" name="button">Send</button>
+</form>
+
+<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script type="text/javascript">
+  let socket = io.connect('http://localhost:3000/chat', {
+    path: '/socket.io'
+  });
+
+  socket.on('join', (data) => {
+    let chat = document.createElement('div');
+    let div = document.createElement('div');
+    div.classList.add('system');
+    div.textContent = data.chat;
+    div.appendChild(chat);
+
+    document.querySelector('#chat-list').appendChild(div);
+  });
+
+  socket.on('exit', (data) => {
+    let chat = document.createElement('div');
+    let div = document.createElement('div');
+    div.classList.add('system');
+    div.textContent = data.chat;
+    div.appendChild(chat);
+
+    document.querySelector('#chat-list').appendChild(div);
+  });
+</script> -->

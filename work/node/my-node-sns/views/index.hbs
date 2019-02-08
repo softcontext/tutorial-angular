@@ -1,0 +1,24 @@
+<h3>{{title}}</h3>
+
+<p>app.locals.x = {{@x}}</p>
+<p>res.locals.y = {{@y}}</p>
+<p>res.render ~ z = {{z}}</p>
+
+<hr>
+
+<h3>배열을 처리하는 방법</h3>
+{{#each pets}}
+  <p>{{@index}} : {{this}}</p>
+{{/each}}
+
+<hr>
+
+{{#if user}}
+  <h3>로그인 한 사용자 정보</h3>
+  <ul>
+    <li>user.id: {{user.id}}</li>
+    <li>user.nick: {{user.nick}}</li>
+    <li>user.email: {{user.email}}</li>
+    <li>user.password: {{user.password}}</li>
+  </ul>
+{{/if}}

@@ -78,6 +78,7 @@
     * [by React]
 * [ngrx]
 * [Angular Pagination with Node + Express + sequelize](part4/node.md)
+* [Angular with Node + Express + JWT](part4/jwt.md)
 * [Angular with Spring Restful + JPA + MariaDB]
 * [Logging]
 
@@ -85,7 +86,7 @@
 * [Part Ⅴ. New Features of Angular](part5/README.md)
 * [Workspace](part5/workspace.md)
 * [Library](part5/library.md)
-* [Angular Universal]
+* [Angular Universal](part5/angular-universal.md)
 
 ## Appendix
 * [Appendix](appendix/README.md)
