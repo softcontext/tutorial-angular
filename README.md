@@ -74,13 +74,13 @@
 * [Part Ⅳ. Angular in Action](part4/README.md)
 * [RxJS](part4/rxjs.md)
 * [To Do List by Angular as Chrome Extension](part4/angular/to-do-list.md)
-    * [by Vue.js]
-    * [by React]
+    * [by Vue.js](part4/vuejs/to-do-list.md)
+    * [by React](part4/react/to-do-list.md)
 * [ngrx]
 * [Angular Pagination with Node + Express + sequelize](part4/node.md)
 * [Angular with Node + Express + JWT](part4/jwt.md)
 * [Angular with Spring Restful + JPA + MariaDB]
-* [Logging]
+* [Logging](part4/logging.md)
 
 ## Part Ⅴ. New Features of Angular
 * [Part Ⅴ. New Features of Angular](part5/README.md)

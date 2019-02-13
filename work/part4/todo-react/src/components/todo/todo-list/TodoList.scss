@@ -1,0 +1,15 @@
+.TodoList {
+  .table {
+    td.right {
+      text-align: right;
+    }
+  
+    td {
+      button.crush {
+        border: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

@@ -374,6 +374,37 @@ i ｢wdm｣: Compiled successfully.
 
 6. `AppComponent` 처리가 완료되면 `index.html` 파일 내 `<app-root></app-root>` 태그 사이에 처리된 내용을 추가합니다. 따라서, 앵귤러는 커스텀 태그 사용 시 마감 태그가 항시 존재해야만 하면 줄여서 사용할 수 없습니다. `app-roo` 문자열은 `app.component.ts` 파일에서 정의한 `selector: 'app-root'` 내용과 일치해야 합니다.
 
+### Profile
+
+개발중이라면 environment.ts 파일이 사용됩니다. 빌드에서 --prod 옵션을 설정하면 environment.prod.ts 파일이 사용됩니다. 개발모드에서 사용하는 설정정보는 environment.ts 파일에 합니다. 서비스모드(배포모드)에서 사용하는 설정정보는 environment.prod.ts 파일에 하면 됩니다.
+
+다음 사용예를 살펴보세요. import 코드는 변경될 필요가 없습니다.
+
+```ts
+import { environment } from '../environments/environment';
+
+const MODE = environment.production ? 'prod' : 'dev';
+```
+
+environment 파일을 임포트하는 대신 isDevMode() 함수를 이용할 수도 있습니다.
+
+```ts
+import { Component, OnInit, isDevMode } from '@angular/core';
+
+@Component({ ... })
+export class AppComponent implements OnInit {
+  ngOnInit() {
+    if (isDevMode()) {
+      console.log('Development');
+    } else {
+      console.log('Production');
+    }
+  }
+}
+```
+
+참고: https://alligator.io/angular/environment-variables/
+
 ### 환경설정 살펴보기
 
 #### package.json
