@@ -1,0 +1,31 @@
+<div class="jumbotron">
+  <div class="container">
+    <h3>{{header.title}}</h3>
+    <p class="lead">{{header.subtitle}}</p>
+    <hr class="my-4">
+    <p>{{userid}}</p>
+    <a class="btn btn-warning" (click)="signout()">Signout</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <h3>Users infomation</h3>
+    <div class="table-responsive">
+      <table class="table table-bordred table-hover">
+        <thead>
+          <th>#</th>
+          <th>ID</th>
+          <th>Admin</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{user.userid}}</td>
+            <td>{{user.admin}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

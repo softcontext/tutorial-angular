@@ -1,10 +1,22 @@
 # Node Express SNS Project
 
-pug 대신 hbs 사용
+pug 대신 hbs를 사용합니다. 개인취향입니다.
 
 **참고**
 
 * Node.js 교과서 조현영 길벗
+
+책 좋습니다. 많이 구매하셔서 저자를 응원합시다!
+
+
+
+
+
+-----------------------------------------------------------------------
+
+
+
+
 
 # 새 프로젝트
 
@@ -23,6 +35,8 @@ $ npm i -g nodemon
 $ npm i --save-dev nodemon
 ```
 
+
+
 ## 1. Dotenv
 
 보안상 중요한 정보를 별도의 파일(.env)로 분리하고 이를 process.env 환경변수에 등록해 주는 기술입니다.
@@ -37,6 +51,8 @@ $ npm i dotenv
 COOKIE_SECRET=secret seed
 ```
 
+
+
 **app.js**
 
 ```js
@@ -47,13 +63,17 @@ require('dotenv').config();
 app.use(cookieParser(process.env.COOKIE_SECRET));
 ```
 
+
+
 ## 2. Session
 
-서버에 접속한 사용자 정보를 관리하는 세션 객체를 사용할 수 있게 해주는 기술입니다. 세션은 쿠키를 기반으로 작동하므로 쿠키 처리를 위한 미들웨어가 필요합니다. 이는 cookie-parser 패키지가 처리합니다. cookie-parser는 프로젝트 제너레이트 시 자동으로 설정됩니다. 세션 설정은 쿠키 설정 뒤에 합니다.
+서버에 접속한 사용자 정보를 관리하는 세션 객체를 사용할 수 있게 해주는 기술입니다. 세션은 쿠키를 기반으로 작동하므로 쿠키 처리를 위한 미들웨어가 필요합니다. 이는 cookie-parser 패키지가 처리합니다. cookie-parser는 프로젝트 제너레이트 시 자동으로 설정됩니다. 세션 설정은 쿠키 설정 뒤에 해야 합니다.
 
 ```bash
 $ npm i express-session
 ```
+
+
 
 **app.js**
 
@@ -71,15 +91,21 @@ app.use(session({
 }));
 ```
 
+
+
 ## 3. Flash Message
 
-1회성 메시지를 사용자에게 전달할 필요가 있을 때 사용하는 기술입니다. POST-REDIRECT-GET 패턴 시 필요한 기술입니다.
+1회성 메시지를 사용자에게 전달할 필요가 있을 때 사용하는 기술입니다. POST-REDIRECT-GET 패턴을 적용하기 위해서 필요한 기술입니다.
+
+
 
 **connect-flash**
 
 ```bash
 $ npm i connect-flash
 ```
+
+
 
 **app.js**
 
@@ -88,6 +114,8 @@ const flash = require('connect-flash');
 
 app.use(flash());
 ```
+
+
 
 ## 4. Sequelize
 
@@ -105,6 +133,8 @@ Successfully created models folder at "C:\...\my-node-sns\models".
 Successfully created migrations folder at "C:\...\my-node-sns\migrations".
 Successfully created seeders folder at "C:\...\my-node-sns\seeders".
 ```
+
+
 
 ### 데이터베이스 연결
 
@@ -126,6 +156,8 @@ if (app.get('env') === 'development') {
   sequelize.sync();
 }
 ```
+
+
 
 **config\config.json**
 
@@ -160,6 +192,8 @@ if (app.get('env') === 'development') {
 ```bash
 $ sequelize db:create
 ```
+
+
 
 ### Entity 설계
 
@@ -210,6 +244,8 @@ module.exports = (sequelize, DataTypes) => {
 // ) ENGINE=InnoDB;
 ```
 
+
+
 **models\post.js**
 
 ```js
@@ -242,6 +278,8 @@ module.exports = (sequelize, DataTypes) => {
 // ) ENGINE=InnoDB;
 ```
 
+
+
 **models\hashtag.js**
 
 ```js
@@ -267,6 +305,8 @@ module.exports = (sequelize, DataTypes) => {
 //   PRIMARY KEY (`id`)
 // ) ENGINE=InnoDB;
 ```
+
+
 
 **models\index.js**
 
@@ -359,6 +399,8 @@ PostHashtag는 조인 테이블로써 다음 N:M 관계를 해소합니다.
 * Post는 다수의 Hashtag를 가진다.
 * Hashtag는 다수의 Post에 사용될 수 있다.
 
+
+
 ## 5. Passport
 
 사용자 인증을 처리하는 기술입니다. 다양한 프로바이더와 인증을 연동하는 작업 시 매우 편리합니다. bcrypt는 패스워드를 암호화할 때 사용하는 기술입니다.
@@ -366,6 +408,8 @@ PostHashtag는 조인 테이블로써 다음 N:M 관계를 해소합니다.
 ```bash
 $ npm i passport passport-local passport-kakao bcrypt
 ```
+
+
 
 ### 패스포트의 작동원리
 

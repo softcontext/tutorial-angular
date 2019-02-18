@@ -99,17 +99,17 @@ export class AppComponent {
 
 필요에 의해서 만든 모듈을 공개한 개발자분들이 있습니다.
 
-#### 공식사이트
+### 공식사이트
 
 https://github.com/dbfannin/ngx-logger
 
-#### 설치
+### 설치
 
 ```
 npm i ngx-logger
 ```
 
-#### 로깅 레벨
+### 로깅 레벨
 
 https://github.com/dbfannin/ngx-logger/blob/master/src/lib/types/logger-level.enum.ts
 
@@ -128,7 +128,7 @@ export enum NgxLoggerLevel {
 }
 ```
 
-#### 적용
+### 적용
 
 **src\app\app.module.ts**
 
@@ -235,7 +235,7 @@ export class AppComponent {
 }
 ```
 
-#### 이슈
+### 이슈
 
 개발자 사이트를 보니 약간의 이슈가 있습니다. 
 
